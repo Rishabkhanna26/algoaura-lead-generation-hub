@@ -301,13 +301,25 @@ export async function POST(request) {
       }
     }
 
-    return NextResponse.json(
+    const response = NextResponse.json(
       {
         success: true,
         message: "Access request received.",
       },
       { status: 200 },
     );
+
+    response.cookies.set({
+      name: "aa_contact_submitted",
+      value: "1",
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 60 * 20,
+    });
+
+    return response;
   } catch (error) {
     if (error instanceof ConfigError) {
       return NextResponse.json(

@@ -2,15 +2,47 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Portfolio from "../../components/Portfolio";
 import VisualEffects from "../../components/VisualEffects";
+import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
+
+const reportsTitle = "Performance Reports for Lead and Funnel Systems";
+const reportsDescription =
+  "Analyze client performance reports from AlgoAura campaigns, including lead growth, conversion metrics, and automation outcomes.";
+const reportsKeywords = [
+  "performance reports",
+  "lead generation metrics",
+  "funnel performance dashboard",
+  "automation roi report",
+  "conversion analytics case studies",
+  "business growth data",
+];
+
+export const metadata = buildPageMetadata({
+  title: reportsTitle,
+  description: reportsDescription,
+  pathname: "/reports",
+  keywords: reportsKeywords,
+});
+
+const reportsSchema = buildWebPageSchema({
+  title: reportsTitle,
+  description: reportsDescription,
+  pathname: "/reports",
+  keywords: reportsKeywords,
+});
 
 export default function ReportsPage() {
   return (
     <div className="min-h-screen bg-background relative">
       <VisualEffects />
       <Navbar />
-      <div className="pt-32 md:pt-36">
+      <main className="pt-32 md:pt-36">
+        <h1 className="sr-only">AlgoAura Performance Reports</h1>
         <Portfolio />
-      </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reportsSchema) }}
+        />
+      </main>
       <Footer />
     </div>
   );

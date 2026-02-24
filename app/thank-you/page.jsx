@@ -10,14 +10,33 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import WhatsAppLogo from "../../components/WhatsAppLogo";
+import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-export const metadata = {
-  title: "Thank You",
-  description: "Thank you for contacting AlgoAura. We will reach out within 12-24 hours.",
-  alternates: {
-    canonical: "/thank-you",
-  },
-};
+const thankYouTitle = "Thank You for Contacting AlgoAura";
+const thankYouDescription =
+  "Your request has been received. AlgoAura will contact you within 12-24 hours to discuss your growth automation strategy.";
+const thankYouKeywords = [
+  "thank you page",
+  "contact form confirmation",
+  "lead request received",
+  "automation consultation confirmation",
+  "AlgoAura confirmation",
+];
+
+export const metadata = buildPageMetadata({
+  title: thankYouTitle,
+  description: thankYouDescription,
+  pathname: "/thank-you",
+  keywords: thankYouKeywords,
+  noindex: true,
+});
+
+const thankYouSchema = buildWebPageSchema({
+  title: thankYouTitle,
+  description: thankYouDescription,
+  pathname: "/thank-you",
+  keywords: thankYouKeywords,
+});
 
 function parseName(value) {
   const single = Array.isArray(value) ? value[0] : value;
@@ -176,6 +195,10 @@ export default async function ThankYouPage({ searchParams }) {
             </a>
           </div>
         </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(thankYouSchema) }}
+        />
       </main>
 
       <Footer />
