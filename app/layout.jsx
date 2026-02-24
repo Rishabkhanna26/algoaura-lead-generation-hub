@@ -118,12 +118,14 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{
             __html: `
               (function () {
+                if (window.__algoauraGaSetup) return;
+                window.__algoauraGaSetup = true;
+
                 var loaded = false;
-                var timeoutId = null;
-                var events = ["pointerdown", "keydown", "touchstart", "scroll"];
+                var gaId = "G-ZRH8WT8MTV";
+                var events = ["scroll", "click", "mousemove", "touchstart", "keydown", "pointerdown"];
 
                 function cleanup() {
-                  if (timeoutId) window.clearTimeout(timeoutId);
                   for (var i = 0; i < events.length; i += 1) {
                     window.removeEventListener(events[i], onInteraction);
                   }
@@ -131,6 +133,11 @@ export default function RootLayout({ children }) {
 
                 function loadAnalytics() {
                   if (loaded) return;
+                  if (document.getElementById("ga4-script")) {
+                    loaded = true;
+                    cleanup();
+                    return;
+                  }
                   loaded = true;
                   cleanup();
 
@@ -138,14 +145,13 @@ export default function RootLayout({ children }) {
                   window.gtag = window.gtag || function () {
                     window.dataLayer.push(arguments);
                   };
+                  window.gtag("js", new Date());
+                  window.gtag("config", gaId);
 
                   var script = document.createElement("script");
+                  script.id = "ga4-script";
                   script.async = true;
-                  script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZRH8WT8MTV";
-                  script.onload = function () {
-                    window.gtag("js", new Date());
-                    window.gtag("config", "G-ZRH8WT8MTV");
-                  };
+                  script.src = "https://www.googletagmanager.com/gtag/js?id=" + gaId;
 
                   document.head.appendChild(script);
                 }
@@ -155,10 +161,8 @@ export default function RootLayout({ children }) {
                 }
 
                 for (var i = 0; i < events.length; i += 1) {
-                  window.addEventListener(events[i], onInteraction, { passive: true });
+                  window.addEventListener(events[i], onInteraction, { passive: true, once: true });
                 }
-
-                timeoutId = window.setTimeout(loadAnalytics, 3500);
               })();
             `,
           }}

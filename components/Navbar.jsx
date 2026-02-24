@@ -98,7 +98,9 @@ export default function Navbar() {
       <div className="container-narrow flex items-center justify-between h-28 md:h-32 px-4 md:px-6">
         <Link href="/" className="inline-flex items-center">
           <img
-            src="/algoaura_logo.webp"
+            src="/algoaura_logo-320.webp"
+            srcSet="/algoaura_logo-220.webp 220w, /algoaura_logo-320.webp 320w, /algoaura_logo-420.webp 420w, /algoaura_logo-520.webp 520w, /algoaura_logo-640.webp 640w"
+            sizes="(max-width: 768px) 220px, (max-width: 1280px) 260px, 294px"
             alt="AlgoAura"
             width={900}
             height={600}
