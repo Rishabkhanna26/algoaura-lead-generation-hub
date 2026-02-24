@@ -1,11 +1,7 @@
 "use client";
 
-import { memo, useEffect, useState } from "react";
-import Link from "next/link";
-import dynamic from "next/dynamic";
+import { memo, useEffect, useRef, useState } from "react";
 import { ArrowRight, Eye } from "lucide-react";
-
-const WorldMapCanvas = dynamic(() => import("./WorldMapCanvas"), { ssr: false });
 
 const bootLines = [
   "Initializing Growth Engine...",
@@ -50,6 +46,10 @@ const TerminalBoot = memo(function TerminalBoot() {
 
   const currentTyping =
     lineIndex < bootLines.length ? bootLines[lineIndex].slice(0, charIndex) : "";
+  const placeholderLines = Math.max(
+    0,
+    bootLines.length - displayedLines.length - (lineIndex < bootLines.length ? 1 : 0),
+  );
 
   return (
     <div className="terminal-text text-xs md:text-sm text-muted-foreground mb-8 text-left max-w-md mx-auto animate-fade-up">
@@ -72,17 +72,24 @@ const TerminalBoot = memo(function TerminalBoot() {
             <span className="border-r-2 border-primary animate-typing-cursor ml-0.5">&nbsp;</span>
           </div>
         )}
+        {Array.from({ length: placeholderLines }).map((_, index) => (
+          <div key={`placeholder-${index}`} className="opacity-0 select-none" aria-hidden="true">
+            <span className="text-primary/50">{">"}</span> reserve
+          </div>
+        ))}
       </div>
     </div>
   );
 });
 
-const TypingHeadline = memo(function TypingHeadline() {
+const TypingHeadline = memo(function TypingHeadline({ active }) {
   const [typedLineIndex, setTypedLineIndex] = useState(0);
   const [typedLine, setTypedLine] = useState("");
   const [isDeletingTypedLine, setIsDeletingTypedLine] = useState(false);
 
   useEffect(() => {
+    if (!active) return;
+
     const currentLine = heroTypedLines[typedLineIndex];
     const typingSpeed = isDeletingTypedLine ? 45 : 70;
 
@@ -102,7 +109,7 @@ const TypingHeadline = memo(function TypingHeadline() {
     }
 
     return () => window.clearTimeout(timer);
-  }, [typedLine, typedLineIndex, isDeletingTypedLine]);
+  }, [typedLine, typedLineIndex, isDeletingTypedLine, active]);
 
   return (
     <span className="mt-2 grid place-items-center leading-[1.26] w-full lg:min-h-[2.45em] py-[0.2em]">
@@ -125,6 +132,10 @@ const TypingHeadline = memo(function TypingHeadline() {
 
 export default function Hero() {
   const [showWorldMap, setShowWorldMap] = useState(false);
+  const [WorldMapCanvasComponent, setWorldMapCanvasComponent] = useState(null);
+  const [isHeroActive, setIsHeroActive] = useState(true);
+  const [isPageVisible, setIsPageVisible] = useState(true);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     let timeoutId;
@@ -148,9 +159,56 @@ export default function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!showWorldMap) return;
+
+    let isCancelled = false;
+
+    import("./WorldMapCanvas").then((mapModule) => {
+      if (isCancelled) return;
+      setWorldMapCanvasComponent(() => mapModule.default);
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [showWorldMap]);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section || typeof window === "undefined" || !("IntersectionObserver" in window)) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsHeroActive(entry.isIntersecting);
+      },
+      { threshold: 0.08 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const onVisibilityChange = () => {
+      setIsPageVisible(!document.hidden);
+    };
+
+    onVisibilityChange();
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
+  }, []);
+
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden">
-      {showWorldMap ? <WorldMapCanvas /> : null}
+    <section
+      ref={sectionRef}
+      className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden"
+    >
+      {showWorldMap && WorldMapCanvasComponent ? <WorldMapCanvasComponent /> : null}
       <div className="absolute inset-0 grid-bg opacity-30 z-0" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/35 to-background/80 pointer-events-none z-[2]" />
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/12 blur-[140px] pointer-events-none z-[2]" />
@@ -159,11 +217,11 @@ export default function Hero() {
         <TerminalBoot />
 
         <h1
-          className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight text-balance mb-8 animate-fade-up"
+          className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight text-balance mb-8 animate-fade-up min-h-[5.3rem] md:min-h-[7.6rem] lg:min-h-[9rem]"
           style={{ animationDelay: "0.18s" }}
         >
           We Build Systems That <br />
-          <TypingHeadline />
+          <TypingHeadline active={isHeroActive && isPageVisible} />
         </h1>
 
         <p
@@ -179,18 +237,18 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up"
           style={{ animationDelay: "0.44s" }}
         >
-          <Link
+          <a
             href="/contact"
             className="gradient-btn px-8 py-3.5 rounded-xl text-base flex items-center justify-center gap-2 animate-pulse-glow"
           >
             Launch Your Growth System <ArrowRight size={18} />
-          </Link>
-          <Link
+          </a>
+          <a
             href="/services"
             className="glass-card px-8 py-3.5 rounded-xl text-base text-foreground hover:border-primary/30 transition-all flex items-center justify-center gap-2"
           >
             <Eye size={16} /> View Architecture
-          </Link>
+          </a>
         </div>
 
         <div

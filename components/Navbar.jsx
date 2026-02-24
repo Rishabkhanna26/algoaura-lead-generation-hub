@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -98,14 +97,14 @@ export default function Navbar() {
     >
       <div className="container-narrow flex items-center justify-between h-28 md:h-32 px-4 md:px-6">
         <Link href="/" className="inline-flex items-center">
-          <Image
+          <img
             src="/algoaura_logo.webp"
             alt="AlgoAura"
             width={900}
             height={600}
-            priority
-            quality={60}
-            sizes="(max-width: 768px) 220px, 260px"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="h-28 md:h-32 w-auto object-contain"
           />
         </Link>

@@ -251,6 +251,11 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 960px;
+  }
 }
 
 .grid-bg {
@@ -286,6 +291,49 @@
   50% {
     opacity: 0.5;
   }
+}
+
+@keyframes loader-spin-cw {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader-spin-ccw {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes loader-hex-fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loader-spin-cw {
+  animation: loader-spin-cw 4s linear infinite;
+}
+
+.loader-spin-ccw {
+  animation: loader-spin-ccw 3s linear infinite;
+}
+
+.loader-hex-fade {
+  animation: loader-hex-fade 2s ease-in-out infinite;
 }
 
 .scanline::after {

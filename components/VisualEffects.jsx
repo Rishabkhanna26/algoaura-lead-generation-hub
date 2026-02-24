@@ -1,14 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-
-const GridBackground = dynamic(() => import("./GridBackground"), { ssr: false });
-const CursorGlow = dynamic(() => import("./CursorGlow"), { ssr: false });
-const FloatingWhatsApp = dynamic(() => import("./FloatingWhatsApp"), { ssr: false });
 
 export default function VisualEffects() {
   const [enabled, setEnabled] = useState(false);
+  const [GridBackgroundComponent, setGridBackgroundComponent] = useState(null);
+  const [CursorGlowComponent, setCursorGlowComponent] = useState(null);
+  const [FloatingWhatsAppComponent, setFloatingWhatsAppComponent] = useState(null);
 
   useEffect(() => {
     let timeoutId;
@@ -32,13 +30,41 @@ export default function VisualEffects() {
     };
   }, []);
 
-  if (!enabled) return null;
+  useEffect(() => {
+    if (!enabled) return;
+
+    let isCancelled = false;
+
+    Promise.all([
+      import("./GridBackground"),
+      import("./CursorGlow"),
+      import("./FloatingWhatsApp"),
+    ]).then(([gridModule, glowModule, whatsappModule]) => {
+      if (isCancelled) return;
+      setGridBackgroundComponent(() => gridModule.default);
+      setCursorGlowComponent(() => glowModule.default);
+      setFloatingWhatsAppComponent(() => whatsappModule.default);
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [enabled]);
+
+  if (
+    !enabled ||
+    !GridBackgroundComponent ||
+    !CursorGlowComponent ||
+    !FloatingWhatsAppComponent
+  ) {
+    return null;
+  }
 
   return (
     <>
-      <GridBackground />
-      <CursorGlow />
-      <FloatingWhatsApp />
+      <GridBackgroundComponent />
+      <CursorGlowComponent />
+      <FloatingWhatsAppComponent />
     </>
   );
 }

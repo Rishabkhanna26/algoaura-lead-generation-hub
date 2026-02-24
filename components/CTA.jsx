@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ArrowRight, Zap } from "lucide-react";
 
 export default function CTA() {
@@ -18,12 +17,12 @@ export default function CTA() {
             <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-8 terminal-text">
               Stop running on manual mode. Initialize your automated growth system today.
             </p>
-            <Link
+            <a
               href="/contact"
               className="gradient-btn inline-flex items-center gap-2 px-10 py-4 rounded-xl text-lg animate-pulse-glow"
             >
               DM &quot;AUTOMATE&quot; TO INITIALIZE <ArrowRight size={20} />
-            </Link>
+            </a>
           </div>
         </div>
       </div>

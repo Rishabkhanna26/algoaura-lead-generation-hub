@@ -66,6 +66,7 @@ function WorldMapCanvas() {
     let countryGeometries = cachedCountryGeometries || [];
     let countryPaths = [];
     let mapFrame = { x: 0, y: 0, width: 0, height: 0 };
+    let viewport = { width: 0, height: 0 };
     let lastFrameTime = 0;
     let isInViewport = true;
     let currentDpr = 1;
@@ -200,6 +201,7 @@ function WorldMapCanvas() {
     const resize = () => {
       currentDpr = getDpr();
       const rect = canvas.getBoundingClientRect();
+      viewport = { width: rect.width, height: rect.height };
       canvas.width = rect.width * currentDpr;
       canvas.height = rect.height * currentDpr;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -259,9 +261,9 @@ function WorldMapCanvas() {
       if (timestamp - lastFrameTime < getFrameInterval()) return;
       lastFrameTime = timestamp;
 
-      const rect = canvas.getBoundingClientRect();
-      ctx.clearRect(0, 0, rect.width, rect.height);
-      ctx.drawImage(staticLayerCanvas, 0, 0, rect.width, rect.height);
+      if (!viewport.width || !viewport.height) return;
+      ctx.clearRect(0, 0, viewport.width, viewport.height);
+      ctx.drawImage(staticLayerCanvas, 0, 0, viewport.width, viewport.height);
 
       for (const particle of particles) {
         const t = particle.progress;

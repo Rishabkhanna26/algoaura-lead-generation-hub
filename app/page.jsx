@@ -27,23 +27,39 @@ export default function HomePage() {
       <VisualEffects />
       <Navbar />
       <Hero />
-      <SectionSeparator label="Diagnostics" />
-      <ProblemSection />
-      <SectionSeparator label="Recovery" />
-      <SolutionSection />
-      <SectionSeparator label="Modules" />
-      <Services />
-      <SectionSeparator label="Protocol" />
-      <Process />
-      <SectionSeparator label="Reports" />
-      <Portfolio />
-      <SectionSeparator label="Logs" />
-      <Testimonials />
-      <SectionSeparator label="Activation" />
-      <CTA />
-      <SectionSeparator label="Access" />
-      <ContactForm />
-      <Footer />
+      <div className="cv-auto">
+        <SectionSeparator label="Diagnostics" />
+        <ProblemSection />
+      </div>
+      <div className="cv-auto">
+        <SectionSeparator label="Recovery" />
+        <SolutionSection />
+      </div>
+      <div className="cv-auto">
+        <SectionSeparator label="Modules" />
+        <Services />
+      </div>
+      <div className="cv-auto">
+        <SectionSeparator label="Protocol" />
+        <Process />
+      </div>
+      <div className="cv-auto">
+        <SectionSeparator label="Reports" />
+        <Portfolio />
+      </div>
+      <div className="cv-auto">
+        <SectionSeparator label="Logs" />
+        <Testimonials />
+      </div>
+      <div className="cv-auto">
+        <SectionSeparator label="Activation" />
+        <CTA />
+      </div>
+      <div className="cv-auto">
+        <SectionSeparator label="Access" />
+        <ContactForm />
+        <Footer />
+      </div>
     </div>
   );
 }

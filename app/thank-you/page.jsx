@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   BadgeCheck,
   CheckCircle2,
@@ -169,12 +168,12 @@ export default async function ThankYouPage({ searchParams }) {
           </section>
 
           <div className="text-center">
-            <Link
+            <a
               href="/"
               className="terminal-text text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               Back to Homepage
-            </Link>
+            </a>
           </div>
         </div>
       </main>

@@ -1,5 +1,4 @@
 import "./globals.css";
-import Script from "next/script";
 import { JetBrains_Mono, Manrope } from "next/font/google";
 import LoaderGate from "../components/LoaderGate";
 
@@ -98,31 +97,72 @@ export default function RootLayout({ children }) {
       className={`${fontSans.variable} ${fontMono.variable}`}
     >
       <body suppressHydrationWarning>
-        <Script id="theme-init" strategy="beforeInteractive">
-          {`
-            try {
-              if (window.localStorage.getItem('theme') === 'light') {
-                document.documentElement.classList.add('light');
-              }
-            } catch (_) {}
-          `}
-        </Script>
+        <script
+          id="theme-init"
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                if (window.localStorage.getItem('theme') === 'light') {
+                  document.documentElement.classList.add('light');
+                }
+              } catch (_) {}
+            `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaGraph) }}
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-ZRH8WT8MTV"
-          strategy="lazyOnload"
+        <script
+          id="ga4-deferred"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                var loaded = false;
+                var timeoutId = null;
+                var events = ["pointerdown", "keydown", "touchstart", "scroll"];
+
+                function cleanup() {
+                  if (timeoutId) window.clearTimeout(timeoutId);
+                  for (var i = 0; i < events.length; i += 1) {
+                    window.removeEventListener(events[i], onInteraction);
+                  }
+                }
+
+                function loadAnalytics() {
+                  if (loaded) return;
+                  loaded = true;
+                  cleanup();
+
+                  window.dataLayer = window.dataLayer || [];
+                  window.gtag = window.gtag || function () {
+                    window.dataLayer.push(arguments);
+                  };
+
+                  var script = document.createElement("script");
+                  script.async = true;
+                  script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZRH8WT8MTV";
+                  script.onload = function () {
+                    window.gtag("js", new Date());
+                    window.gtag("config", "G-ZRH8WT8MTV");
+                  };
+
+                  document.head.appendChild(script);
+                }
+
+                function onInteraction() {
+                  loadAnalytics();
+                }
+
+                for (var i = 0; i < events.length; i += 1) {
+                  window.addEventListener(events[i], onInteraction, { passive: true });
+                }
+
+                timeoutId = window.setTimeout(loadAnalytics, 3500);
+              })();
+            `,
+          }}
         />
-        <Script id="ga4-init" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-ZRH8WT8MTV');
-          `}
-        </Script>
         <LoaderGate>{children}</LoaderGate>
       </body>
     </html>

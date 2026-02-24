@@ -1,5 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
 import { Cog, Globe, Mail, MapPin, Target } from "lucide-react";
 
 export default function Footer() {
@@ -8,17 +6,17 @@ export default function Footer() {
       <div className="container-narrow">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
-            <Link href="/" className="inline-flex items-center mb-3">
-              <Image
+            <a href="/" className="inline-flex items-center mb-3">
+              <img
                 src="/algoaura_logo.webp"
                 alt="AlgoAura"
                 width={900}
                 height={600}
-                quality={60}
-                sizes="(max-width: 768px) 220px, 260px"
+                loading="lazy"
+                decoding="async"
                 className="h-32 w-auto object-contain"
               />
-            </Link>
+            </a>
             <p className="text-muted-foreground text-base leading-relaxed terminal-text">
               The Automation Control Room. We build systems that generate leads on autopilot.
             </p>
@@ -45,49 +43,49 @@ export default function Footer() {
             <h4 className="font-heading font-semibold mb-3 terminal-text text-base">Navigation</h4>
             <ul className="space-y-2 text-base text-muted-foreground">
               <li>
-                <Link href="/about" className="hover:text-foreground transition-colors">
+                <a href="/about" className="hover:text-foreground transition-colors">
                   About
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/services" className="hover:text-foreground transition-colors">
+                <a href="/services" className="hover:text-foreground transition-colors">
                   Services
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/portfolio" className="hover:text-foreground transition-colors">
+                <a href="/portfolio" className="hover:text-foreground transition-colors">
                   Portfolio
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-foreground transition-colors">
+                <a href="/contact" className="hover:text-foreground transition-colors">
                   Contact
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/modules" className="hover:text-foreground transition-colors">
+                <a href="/modules" className="hover:text-foreground transition-colors">
                   Modules
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/protocol" className="hover:text-foreground transition-colors">
+                <a href="/protocol" className="hover:text-foreground transition-colors">
                   Protocol
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/reports" className="hover:text-foreground transition-colors">
+                <a href="/reports" className="hover:text-foreground transition-colors">
                   Reports
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/logs" className="hover:text-foreground transition-colors">
+                <a href="/logs" className="hover:text-foreground transition-colors">
                   Logs
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/access" className="hover:text-foreground transition-colors">
+                <a href="/access" className="hover:text-foreground transition-colors">
                   Access
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -110,12 +108,12 @@ export default function Footer() {
             {`(c) ${new Date().getFullYear()} AlgoAura. All systems operational.`}
           </p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors text-xs">
+            <a href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors text-xs">
               Privacy
-            </Link>
-            <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors text-xs">
+            </a>
+            <a href="/terms" className="text-muted-foreground hover:text-foreground transition-colors text-xs">
               Terms
-            </Link>
+            </a>
           </div>
         </div>
       </div>

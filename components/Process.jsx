@@ -58,11 +58,7 @@ export default function Process() {
 
                 {index < 2 && (
                   <div
-                    className="hidden md:flex absolute top-1/2 -translate-y-1/2 text-primary/30 text-2xl"
-                    style={{
-                      right: index === 0 ? "33%" : "0%",
-                      transform: "translateX(50%)",
-                    }}
+                    className="hidden md:flex absolute top-1/2 -right-6 -translate-y-1/2 z-20 items-center justify-center text-primary/40 text-2xl pointer-events-none"
                   >
                     {"->"}
                   </div>
