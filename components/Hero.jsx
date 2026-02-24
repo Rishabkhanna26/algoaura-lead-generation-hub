@@ -11,7 +11,7 @@ const bootLines = [
   "Initializing Growth Engine...",
   "Connecting Automation Layers...",
   "Optimizing Conversion Pipeline...",
-  "System Online [OK]",
+  "System Online ✅",
 ];
 
 const heroTypedLines = [

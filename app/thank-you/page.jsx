@@ -3,7 +3,6 @@ import {
   BadgeCheck,
   CheckCircle2,
   Clock3,
-  MessageCircle,
   PhoneCall,
   ShieldCheck,
   Sparkles,
@@ -11,6 +10,7 @@ import {
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
+import WhatsAppLogo from "../../components/WhatsAppLogo";
 
 export const metadata = {
   title: "Thank You",
@@ -31,7 +31,7 @@ function parseName(value) {
 }
 
 const whatsappHref =
-  "https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20just%20submitted%20a%20form.";
+  "https://wa.me/918059649659?text=Hi%20AlgoAura,%20I%20just%20submitted%20a%20form.";
 const calendlyHref = "https://calendly.com/teamalgoaura/30min";
 
 export default async function ThankYouPage({ searchParams }) {
@@ -100,7 +100,7 @@ export default async function ThankYouPage({ searchParams }) {
                 rel="noopener noreferrer"
                 className="gradient-btn inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-base"
               >
-                <MessageCircle size={18} />
+                <WhatsAppLogo className="w-[18px] h-[18px]" />
                 Chat on WhatsApp Now
               </a>
               <a
@@ -144,7 +144,7 @@ export default async function ThankYouPage({ searchParams }) {
                   <p className="text-xs terminal-text uppercase tracking-wide text-muted-foreground mb-1">
                     Phone
                   </p>
-                  <a href="tel:+918708767499" className="text-lg font-semibold hover:text-primary">
+                  <a href="tel:+918059649659" className="text-lg font-semibold hover:text-primary">
                     +91 87087 67499
                   </a>
                 </div>

@@ -15,10 +15,12 @@ const navLinks = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [navVisible, setNavVisible] = useState(true);
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState("dark");
   const pathname = usePathname();
   const scrollRafRef = useRef(null);
+  const lastScrollYRef = useRef(0);
 
   useEffect(() => {
     const onScroll = () => {
@@ -26,11 +28,27 @@ export default function Navbar() {
 
       scrollRafRef.current = window.requestAnimationFrame(() => {
         scrollRafRef.current = null;
-        const nextScrolled = window.scrollY > 20;
+        const currentY = window.scrollY;
+        const nextScrolled = currentY > 20;
         setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
+
+        if (currentY <= 10) {
+          setNavVisible(true);
+          lastScrollYRef.current = currentY;
+          return;
+        }
+
+        const deltaY = currentY - lastScrollYRef.current;
+        if (Math.abs(deltaY) > 6 && !open) {
+          const shouldShow = deltaY < 0;
+          setNavVisible((prev) => (prev === shouldShow ? prev : shouldShow));
+        }
+
+        lastScrollYRef.current = currentY;
       });
     };
 
+    lastScrollYRef.current = window.scrollY;
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
@@ -39,7 +57,13 @@ export default function Navbar() {
         window.cancelAnimationFrame(scrollRafRef.current);
       }
     };
-  }, []);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) {
+      setNavVisible(true);
+    }
+  }, [open]);
 
   useEffect(() => {
     setOpen(false);
@@ -66,7 +90,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-transform transition-colors duration-300 ${
+        navVisible ? "translate-y-0" : "-translate-y-full"
+      } ${
         scrolled ? "glass-card border-b border-white/5" : "bg-transparent"
       }`}
     >

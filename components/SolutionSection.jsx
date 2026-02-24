@@ -43,7 +43,7 @@ export default function SolutionSection() {
               </div>
               <div className="flex-1">
                 <h3 className="font-heading font-semibold text-base text-foreground">
-                  {`[OK] ${upgrade.title}`}
+                  {`✅ ${upgrade.title}`}
                 </h3>
               </div>
               <span className="terminal-text text-xs text-success/80 uppercase tracking-wider">
