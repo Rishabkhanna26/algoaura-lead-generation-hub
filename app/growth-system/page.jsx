@@ -7,11 +7,16 @@ import WhatsAppLogo from "../../components/WhatsAppLogo";
 
 const growthSystemTitle = "Free Growth System Consultation for Businesses";
 const growthSystemDescription =
-  "Get a focused growth system plan with web development, CRM setup, WhatsApp automation, and booking workflows designed to increase qualified leads fast.";
+  "Get a focused growth plan with WordPress/Next.js web development, CRM setup, AI-powered WhatsApp automation, and booking workflows to increase qualified leads.";
 const growthSystemKeywords = [
   "growth system",
   "business automation funnel",
   "website crm whatsapp integration",
+  "ai powered product for lead management",
+  "ai powered whatsapp automation india",
+  "whatsapp automation for small business india",
+  "best wordpress developer in india",
+  "business automation services punjab",
   "book free automation consultation",
   "lead management automation",
 ];

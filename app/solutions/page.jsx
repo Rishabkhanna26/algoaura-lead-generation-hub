@@ -14,6 +14,10 @@ const solutionsKeywords = [
   "funnel optimization",
   "website growth systems",
   "lead automation services",
+  "ai powered business solutions",
+  "whatsapp automation solutions india",
+  "wordpress and crm solutions",
+  "best wordpress developer in punjab",
 ];
 
 export const metadata = buildPageMetadata({

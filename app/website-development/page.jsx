@@ -4,14 +4,20 @@ import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const websiteDevTitle = "High-Converting Website Development Services";
+const websiteDevTitle = "WordPress and Next.js Website Development in Punjab, India";
 const websiteDevDescription =
-  "Get a fast, SEO-ready website built for lead generation. We design conversion-focused pages, clear funnels, and scalable architecture for growing businesses.";
+  "Get high-converting WordPress and Next.js websites built for lead generation with SEO-ready architecture, clear funnels, and scalable business performance.";
 const websiteDevKeywords = [
   "website development services",
   "high converting website design",
   "seo friendly web development",
   "nextjs business website",
+  "wordpress website development",
+  "custom wordpress developer punjab",
+  "best wordpress developer in punjab",
+  "best wordpress developer in india",
+  "hire wordpress developer india",
+  "nextjs and wordpress developer",
   "lead generation website development",
 ];
 

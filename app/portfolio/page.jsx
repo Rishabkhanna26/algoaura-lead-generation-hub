@@ -8,11 +8,15 @@ import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
 const portfolioTitle = "Website and Automation Case Studies with Results";
 const portfolioDescription =
-  "See real client projects where AlgoAura improved lead generation using conversion-focused websites, CRM workflows, WhatsApp automation, and booking systems.";
+  "See real projects where AlgoAura improved lead generation using WordPress/Next.js websites, CRM workflows, AI-powered WhatsApp automation, and booking systems.";
 const portfolioKeywords = [
   "lead generation case studies",
   "automation case studies",
   "crm automation results",
+  "ai powered automation product case study",
+  "whatsapp automation project portfolio",
+  "wordpress development portfolio india",
+  "nextjs business website portfolio",
   "sales funnel success stories",
   "client growth results",
   "conversion optimization portfolio",

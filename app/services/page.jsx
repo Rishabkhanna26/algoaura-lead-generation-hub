@@ -8,13 +8,20 @@ import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 import { BadgeCheck } from "lucide-react";
 import Link from "next/link";
 
-const servicesTitle = "Website, CRM and WhatsApp Automation Services";
+const servicesTitle = "AI-Powered WhatsApp Automation and Web Development Services";
 const servicesDescription =
-  "Explore high-converting website development, CRM integration, WhatsApp automation, and booking funnel setup designed to turn traffic into qualified leads.";
+  "Explore WordPress and Next.js website development, CRM integration, AI-powered WhatsApp automation, and booking funnel setup built to generate qualified leads.";
 const servicesKeywords = [
   "website development service",
   "crm setup and integration",
   "whatsapp automation service",
+  "ai powered whatsapp automation services",
+  "ai automation agency for businesses",
+  "wordpress website development services",
+  "best wordpress developer in punjab",
+  "best wordpress developer in india",
+  "wordpress and nextjs development agency",
+  "crm and whatsapp automation india",
   "booking funnel setup",
   "lead automation services",
   "business growth systems",

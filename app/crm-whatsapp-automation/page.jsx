@@ -4,12 +4,18 @@ import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const automationTitle = "CRM Setup and WhatsApp Automation Services";
+const automationTitle = "AI-Powered CRM and WhatsApp Automation Services in India";
 const automationDescription =
-  "Automate your lead pipeline with CRM setup, WhatsApp follow-ups, and booking workflows. Capture, track, and convert leads faster with less manual effort.";
+  "Automate your lead pipeline with CRM setup, AI-powered WhatsApp follow-ups, and booking workflows. Capture, track, and convert leads faster with less manual effort.";
 const automationKeywords = [
   "crm setup services",
   "whatsapp automation services",
+  "ai powered whatsapp automation",
+  "ai whatsapp chatbot for business",
+  "whatsapp automation agency india",
+  "crm and whatsapp automation punjab",
+  "lead management automation software",
+  "ai powered crm automation",
   "lead pipeline automation",
   "zoho crm integration",
   "booking automation setup",

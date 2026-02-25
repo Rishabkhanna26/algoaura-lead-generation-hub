@@ -20,12 +20,21 @@ import { buildPageMetadata, buildWebPageSchema } from "../lib/seo";
 
 const homeTitle = "Web Development and Automation for Growing Businesses";
 const homeDescription =
-  "Need web development plus smart automation? We build SEO-ready websites with CRM, WhatsApp, and booking systems to capture, track, and convert more leads.";
+  "Need WordPress or Next.js web development plus AI-powered automation? We build SEO-ready websites with CRM, WhatsApp, and booking systems to capture and convert more leads.";
 const homeKeywords = [
   "web development for businesses",
   "smart automation agency",
   "crm integration services",
   "whatsapp lead automation",
+  "ai powered whatsapp automation",
+  "ai powered business automation",
+  "ai powered product development",
+  "best wordpress developer in punjab",
+  "best wordpress developer in india",
+  "wordpress website developer punjab",
+  "wordpress development company india",
+  "next js developer india",
+  "lead automation agency india",
   "booking automation setup",
   "high converting websites",
   "lead tracking dashboard",

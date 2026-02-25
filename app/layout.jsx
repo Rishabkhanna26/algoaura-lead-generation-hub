@@ -25,7 +25,18 @@ export const metadata = {
     template: "%s | AlgoAura",
   },
   description:
-    "Need a modern website that converts leads? AlgoAura builds SEO-friendly websites with CRM, WhatsApp, and booking automation to grow your business faster.",
+    "Need WordPress or Next.js web development with AI-powered WhatsApp automation? AlgoAura builds SEO-friendly websites with CRM and booking systems to grow your business faster.",
+  keywords: [
+    "AI powered product development",
+    "AI powered WhatsApp automation",
+    "best WordPress developer in Punjab",
+    "best WordPress developer in India",
+    "website development agency India",
+    "CRM and automation services",
+    "WhatsApp lead automation",
+    "Next.js web development",
+    "AlgoAura",
+  ],
   robots: {
     index: true,
     follow: true,
@@ -40,7 +51,7 @@ export const metadata = {
     siteName: "AlgoAura",
     title: "Web Development and Automation for Growing Businesses | AlgoAura",
     description:
-      "Need a modern website that converts leads? AlgoAura builds SEO-friendly websites with CRM, WhatsApp, and booking automation to grow your business faster.",
+      "Need WordPress or Next.js web development with AI-powered WhatsApp automation? AlgoAura builds SEO-friendly websites with CRM and booking systems to grow your business faster.",
     images: [
       {
         url: "/algoaura_logo.webp",
@@ -54,7 +65,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Web Development and Automation for Growing Businesses | AlgoAura",
     description:
-      "Need a modern website that converts leads? AlgoAura builds SEO-friendly websites with CRM, WhatsApp, and booking automation to grow your business faster.",
+      "Need WordPress or Next.js web development with AI-powered WhatsApp automation? AlgoAura builds SEO-friendly websites with CRM and booking systems to grow your business faster.",
     images: ["/algoaura_logo.webp"],
   },
   icons: {
@@ -91,7 +102,7 @@ const schemaGraph = [
     name: "AlgoAura",
     url: siteUrl,
     description:
-      "Need a modern website that converts leads? AlgoAura builds SEO-friendly websites with CRM, WhatsApp, and booking automation to grow your business faster.",
+      "Need WordPress or Next.js web development with AI-powered WhatsApp automation? AlgoAura builds SEO-friendly websites with CRM and booking systems to grow your business faster.",
   },
 ];
 

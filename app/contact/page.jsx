@@ -8,13 +8,18 @@ import { absoluteUrl, buildPageMetadata, buildWebPageSchema } from "../../lib/se
 
 const contactTitle = "Book a Free Website and Automation Consultation";
 const contactDescription =
-  "Book a free consultation for website development, CRM setup, WhatsApp automation, and lead workflows tailored to your business goals and growth stage.";
+  "Book a free consultation for WordPress/Next.js development, CRM setup, AI-powered WhatsApp automation, and lead workflows tailored to your business goals.";
 const contactKeywords = [
   "contact AlgoAura",
   "book automation strategy call",
   "lead generation consultation",
   "crm automation consultation",
   "whatsapp automation consultation",
+  "ai powered product consultation",
+  "best wordpress developer in punjab",
+  "best wordpress developer in india",
+  "hire wordpress developer in india",
+  "whatsapp automation expert india",
   "business growth audit",
 ];
 
