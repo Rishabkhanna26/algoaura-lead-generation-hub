@@ -1,40 +1,33 @@
-import { Bot, Cog, GitBranch, Globe, Target } from "lucide-react";
+import { Cog, GitBranch, Globe, Target } from "lucide-react";
 
 const modules = [
   {
     icon: Globe,
-    title: "Web Development Engine",
-    desc: "Conversion-optimized digital infrastructure built for speed and scale.",
-    version: "v3.2",
+    title: "High-Converting Website Development",
+    desc: "Modern, fast, and SEO-ready websites built to turn traffic into qualified leads.",
+    version: "01",
     status: "ACTIVE",
   },
   {
     icon: Cog,
-    title: "Automation Core",
-    desc: "Smart workflows, CRM integrations, and automated pipelines.",
-    version: "v2.8",
+    title: "CRM Setup and Integration",
+    desc: "Clean lead pipelines with Zoho and connected tools so every inquiry is tracked.",
+    version: "02",
     status: "ACTIVE",
   },
   {
     icon: Target,
-    title: "Lead Acquisition Layer",
-    desc: "Funnels, ads, and tracking systems that generate qualified leads.",
-    version: "v4.1",
+    title: "WhatsApp and Lead Automation",
+    desc: "Instant follow-ups, reminders, and automation flows that keep leads engaged 24/7.",
+    version: "03",
     status: "ACTIVE",
   },
   {
     icon: GitBranch,
-    title: "Funnel Optimization Suite",
-    desc: "Sales flow engineering from landing page to checkout.",
-    version: "v2.5",
+    title: "Booking and Sales Funnel Setup",
+    desc: "Calendly, landing pages, and conversion flows connected into one simple system.",
+    version: "04",
     status: "ACTIVE",
-  },
-  {
-    icon: Bot,
-    title: "AI Intelligence Module",
-    desc: "Chatbots and AI-powered automation for 24/7 engagement.",
-    version: "v1.9",
-    status: "NEW",
   },
 ];
 
@@ -44,10 +37,10 @@ export default function Services() {
       <div className="container-narrow">
         <div className="text-center mb-14 animate-fade-up">
           <span className="terminal-text text-primary text-sm font-semibold uppercase tracking-wider">
-            {"// Growth Modules"}
+            {"// Services Overview"}
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3">
-            System <span className="gradient-text">Architecture</span>
+            What We <span className="gradient-text">Build</span>
           </h2>
         </div>
 
@@ -63,16 +56,8 @@ export default function Services() {
                   <module.icon className="text-primary" size={24} />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="terminal-text text-[10px] text-muted-foreground">
-                    {module.version}
-                  </span>
-                  <span
-                    className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                      module.status === "NEW"
-                        ? "bg-primary/15 text-primary"
-                        : "bg-success/15 text-success"
-                    }`}
-                  >
+                  <span className="terminal-text text-[10px] text-muted-foreground">#{module.version}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-success/15 text-success">
                     {module.status}
                   </span>
                 </div>
@@ -85,7 +70,7 @@ export default function Services() {
                 <div className="flex items-center gap-2">
                   <div className="status-dot status-dot-online" />
                   <span className="terminal-text text-[10px] text-muted-foreground">
-                    Module Online
+                    Service Included
                   </span>
                 </div>
               </div>

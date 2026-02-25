@@ -1,4 +1,3 @@
-import CTA from "../../components/CTA";
 import ContactForm from "../../components/ContactForm";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
@@ -38,8 +37,14 @@ export default function ContactPage() {
       <Navbar />
       <main className="pt-32 md:pt-36">
         <h1 className="sr-only">Contact AlgoAura</h1>
-        <ContactForm />
-        <CTA />
+        <ContactForm
+          title={
+            <>
+              Let&apos;s Build Your <span className="gradient-text">Growth System</span>
+            </>
+          }
+          description="Tell us about your business and we will recommend the best website + automation setup."
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}

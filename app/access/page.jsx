@@ -37,7 +37,14 @@ export default function AccessPage() {
       <Navbar />
       <main className="pt-32 md:pt-36">
         <h1 className="sr-only">Request Access</h1>
-        <ContactForm />
+        <ContactForm
+          title={
+            <>
+              Request <span className="gradient-text">System Access</span>
+            </>
+          }
+          description="Share your business details and we will contact you with the right growth automation plan."
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(accessSchema) }}

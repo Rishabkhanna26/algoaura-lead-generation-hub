@@ -21,26 +21,26 @@ const fontMono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "AlgoAura | Lead Generation and Automation Agency",
+    default: "AlgoAura | Web Development and Smart Automation",
     template: "%s | AlgoAura",
   },
   description:
-    "Lead generation, CRM automation, WhatsApp automation, and conversion systems that grow your business on autopilot.",
+    "Web development plus smart automation for growing businesses. CRM, WhatsApp, booking, and lead tracking systems built to convert.",
   keywords: [
-    "lead generation",
-    "business automation",
-    "CRM automation",
-    "sales funnels",
-    "whatsapp automation",
-    "web development",
+    "web development agency",
+    "smart automation",
+    "CRM setup and integration",
+    "WhatsApp automation",
+    "booking automation",
+    "lead generation system",
   ],
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: "AlgoAura",
-    title: "AlgoAura | Lead Generation and Automation Agency",
+    title: "AlgoAura | Web Development and Smart Automation",
     description:
-      "Lead generation, CRM automation, WhatsApp automation, and conversion systems that grow your business on autopilot.",
+      "Web development plus smart automation for growing businesses. CRM, WhatsApp, booking, and lead tracking systems built to convert.",
     images: [
       {
         url: "/algoaura_logo.webp",
@@ -52,9 +52,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AlgoAura | Lead Generation and Automation Agency",
+    title: "AlgoAura | Web Development and Smart Automation",
     description:
-      "Lead generation, CRM automation, WhatsApp automation, and conversion systems that grow your business on autopilot.",
+      "Web development plus smart automation for growing businesses. CRM, WhatsApp, booking, and lead tracking systems built to convert.",
     images: ["/algoaura_logo.webp"],
   },
   icons: {
@@ -85,7 +85,7 @@ const schemaGraph = [
     name: "AlgoAura",
     url: siteUrl,
     description:
-      "Lead generation, CRM automation, WhatsApp automation, and conversion systems that grow your business on autopilot.",
+      "Web development plus smart automation for growing businesses. CRM, WhatsApp, booking, and lead tracking systems built to convert.",
   },
 ];
 

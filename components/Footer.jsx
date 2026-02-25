@@ -20,23 +20,23 @@ export default function Footer() {
               />
             </a>
             <p className="text-muted-foreground text-base leading-relaxed terminal-text">
-              The Automation Control Room. We build systems that generate leads on autopilot.
+              Web development and smart automation systems for businesses that want predictable growth.
             </p>
           </div>
 
           <div>
             <h4 className="font-heading font-semibold mb-3 terminal-text text-base">
-              Growth Modules
+              Services
             </h4>
             <ul className="space-y-2 text-base text-muted-foreground">
               <li className="flex items-center gap-2">
-                <Globe size={14} className="text-primary/50" /> Web Development Engine
+                <Globe size={14} className="text-primary/50" /> Website Development
               </li>
               <li className="flex items-center gap-2">
-                <Cog size={14} className="text-primary/50" /> Automation Core
+                <Cog size={14} className="text-primary/50" /> CRM Integration
               </li>
               <li className="flex items-center gap-2">
-                <Target size={14} className="text-primary/50" /> Lead Acquisition
+                <Target size={14} className="text-primary/50" /> Lead and WhatsApp Automation
               </li>
             </ul>
           </div>
@@ -107,7 +107,7 @@ export default function Footer() {
 
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground terminal-text">
-            {`(c) ${new Date().getFullYear()} AlgoAura. All systems operational.`}
+            {`(c) ${new Date().getFullYear()} AlgoAura. All rights reserved.`}
           </p>
           <div className="flex gap-4">
             <a href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors text-xs">

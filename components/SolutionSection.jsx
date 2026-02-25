@@ -8,11 +8,11 @@ import {
 } from "lucide-react";
 
 const upgrades = [
-  { icon: Globe, title: "Custom Website Engine", status: "Activated" },
-  { icon: Bot, title: "CRM Automation Layer", status: "Connected" },
-  { icon: MessageSquare, title: "WhatsApp Automation", status: "Online" },
-  { icon: BarChart3, title: "Funnel Optimization", status: "Enabled" },
-  { icon: Target, title: "Lead Tracking Dashboard", status: "Live" },
+  { icon: Globe, title: "High-performance websites (Next.js)", status: "LIVE" },
+  { icon: Bot, title: "CRM integration (Zoho and more)", status: "CONNECTED" },
+  { icon: MessageSquare, title: "WhatsApp automation", status: "ACTIVE" },
+  { icon: Target, title: "Booking automation (Calendly)", status: "ACTIVE" },
+  { icon: BarChart3, title: "Lead tracking dashboard", status: "TRACKING" },
 ];
 
 export default function SolutionSection() {
@@ -21,13 +21,13 @@ export default function SolutionSection() {
       <div className="container-narrow">
         <div className="text-center mb-14 animate-fade-up">
           <span className="terminal-text text-success text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2">
-            <CheckCircle2 size={16} /> System Upgrade Complete
+            <CheckCircle2 size={16} /> Your Complete Solution
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3 text-balance">
-            All Modules <span className="gradient-text">Online</span>
+            We Build <span className="gradient-text">Growth Systems</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            AlgoAura deploys a fully automated growth system tailored to your business.
+            We combine everything needed to turn your website into a predictable lead engine.
           </p>
         </div>
 
@@ -43,7 +43,7 @@ export default function SolutionSection() {
               </div>
               <div className="flex-1">
                 <h3 className="font-heading font-semibold text-base text-foreground">
-                  {`✅ ${upgrade.title}`}
+                  {upgrade.title}
                 </h3>
               </div>
               <span className="terminal-text text-xs text-success/80 uppercase tracking-wider">

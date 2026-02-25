@@ -2,7 +2,6 @@ import CTA from "../components/CTA";
 import ContactForm from "../components/ContactForm";
 import Portfolio from "../components/Portfolio";
 import ProblemSection from "../components/ProblemSection";
-import Process from "../components/Process";
 import Services from "../components/Services";
 import SolutionSection from "../components/SolutionSection";
 import Footer from "../components/Footer";
@@ -11,21 +10,21 @@ import Navbar from "../components/Navbar";
 import SectionSeparator from "../components/SectionSeparator";
 import Testimonials from "../components/Testimonials";
 import VisualEffects from "../components/VisualEffects";
+import WhoThisIsFor from "../components/WhoThisIsFor";
 import { buildPageMetadata, buildWebPageSchema } from "../lib/seo";
 
 const homeTitle = "Lead Generation, CRM and WhatsApp Automation Agency";
 const homeDescription =
-  "AlgoAura builds lead generation systems, CRM automation, WhatsApp automation, and high-converting funnels for startups and growing businesses.";
+  "Web development plus smart automation for growing businesses. We build modern websites with CRM, WhatsApp, booking, and lead automation.";
 const homeKeywords = [
-  "lead generation agency",
-  "crm automation services",
-  "whatsapp automation agency",
-  "sales funnel automation",
-  "conversion optimization services",
-  "custom website development",
-  "business automation company",
-  "startup growth systems",
-  "ai chatbot automation",
+  "web development for businesses",
+  "smart automation agency",
+  "crm integration services",
+  "whatsapp lead automation",
+  "booking automation setup",
+  "high converting websites",
+  "lead tracking dashboard",
+  "growth system for startups",
   "AlgoAura",
 ];
 
@@ -51,36 +50,36 @@ export default function HomePage() {
       <main>
         <Hero />
         <div className="cv-auto">
-          <SectionSeparator label="Diagnostics" />
+          <SectionSeparator label="Problem" />
           <ProblemSection />
         </div>
         <div className="cv-auto">
-          <SectionSeparator label="Recovery" />
+          <SectionSeparator label="Solution" />
           <SolutionSection />
         </div>
         <div className="cv-auto">
-          <SectionSeparator label="Modules" />
+          <SectionSeparator label="Services" />
           <Services />
         </div>
         <div className="cv-auto">
-          <SectionSeparator label="Protocol" />
-          <Process />
+          <SectionSeparator label="Audience" />
+          <WhoThisIsFor />
         </div>
         <div className="cv-auto">
-          <SectionSeparator label="Reports" />
+          <SectionSeparator label="Results" />
           <Portfolio />
         </div>
         <div className="cv-auto">
-          <SectionSeparator label="Logs" />
+          <SectionSeparator label="Testimonials" />
           <Testimonials />
         </div>
         <div className="cv-auto">
-          <SectionSeparator label="Activation" />
-          <CTA />
+          <SectionSeparator label="Get Started" />
+          <ContactForm />
         </div>
         <div className="cv-auto">
-          <SectionSeparator label="Access" />
-          <ContactForm />
+          <SectionSeparator label="Final Step" />
+          <CTA />
           <Footer />
         </div>
         <script

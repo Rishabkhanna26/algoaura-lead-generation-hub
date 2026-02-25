@@ -12,16 +12,16 @@ export default function CTA() {
               <Zap className="text-primary" size={32} />
             </div>
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-balance">
-              Ready to <span className="gradient-text">Activate</span> Your Growth Engine?
+              Ready to <span className="gradient-text">Automate</span> Your Business?
             </h2>
             <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-8 terminal-text">
-              Stop running on manual mode. Initialize your automated growth system today.
+              Get a website and automation system that helps you capture, track, and close more leads.
             </p>
             <a
               href="/contact"
               className="gradient-btn inline-flex items-center gap-2 px-10 py-4 rounded-xl text-lg animate-pulse-glow"
             >
-              DM &quot;AUTOMATE&quot; TO INITIALIZE <ArrowRight size={20} />
+              Book Consultation <ArrowRight size={20} />
             </a>
           </div>
         </div>

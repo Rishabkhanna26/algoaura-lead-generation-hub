@@ -89,7 +89,7 @@ export default function ContactFormClient() {
       />
       <select name="businessType" className={inputClasses} defaultValue="" required>
         <option value="" disabled>
-          Business Type
+          Your Business Type
         </option>
         <option value="startup">Startup</option>
         <option value="local">Local Business</option>
@@ -109,7 +109,7 @@ export default function ContactFormClient() {
       </select>
       <textarea
         name="challenge"
-        placeholder="Biggest Growth Challenge"
+        placeholder="What do you want to improve? (Optional)"
         rows={3}
         className={`${inputClasses} resize-none`}
       />
@@ -123,7 +123,7 @@ export default function ContactFormClient() {
         disabled={submitting}
         className="w-full gradient-btn py-3 rounded-lg flex items-center justify-center gap-2 disabled:opacity-70"
       >
-        {submitting ? "Submitting..." : "Submit Access Request"} <Send size={16} />
+        {submitting ? "Submitting..." : "Book Free Consultation"} <Send size={16} />
       </button>
     </form>
   );

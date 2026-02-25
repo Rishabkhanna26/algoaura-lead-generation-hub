@@ -1,7 +1,8 @@
 "use client";
 
 import { memo, useEffect, useRef, useState } from "react";
-import { ArrowRight, Eye } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import WhatsAppLogo from "./WhatsAppLogo";
 
 const bootLines = [
   "Initializing Growth Engine...",
@@ -11,10 +12,10 @@ const bootLines = [
 ];
 
 const heroTypedLines = [
-  "Generate Leads on Autopilot",
-  "Build Your Business Online",
-  "Automate Follow-Ups 24/7",
-  "Scale with Smart Funnels",
+  "for Growing Businesses",
+  "with CRM + WhatsApp Automation",
+  "with Booking and Lead Tracking",
+  "that Convert Visitors into Leads",
 ];
 const longestHeroTypedLine = heroTypedLines.reduce(
   (longest, line) => (line.length > longest.length ? line : longest),
@@ -220,7 +221,7 @@ export default function Hero() {
           className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold leading-tight text-balance mb-8 animate-fade-up min-h-[5.3rem] md:min-h-[7.6rem] lg:min-h-[9rem]"
           style={{ animationDelay: "0.18s" }}
         >
-          We Build Systems That <br />
+          Web Development + Smart Automation <br />
           <TypingHeadline active={isHeroActive && isPageVisible} />
         </h1>
 
@@ -228,9 +229,7 @@ export default function Hero() {
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-balance animate-fade-up"
           style={{ animationDelay: "0.32s" }}
         >
-          From custom websites to automated CRMs and sales funnels - we help startups and
-          businesses scale with <span className="highlight-word text-primary">smart systems</span>{" "}
-          that work 24/7.
+          We build modern websites integrated with CRM, WhatsApp & lead automation systems.
         </p>
 
         <div
@@ -241,13 +240,15 @@ export default function Hero() {
             href="/contact"
             className="gradient-btn px-8 py-3.5 rounded-xl text-base flex items-center justify-center gap-2 animate-pulse-glow"
           >
-            Launch Your Growth System <ArrowRight size={18} />
+            Book Free Consultation <ArrowRight size={18} />
           </a>
           <a
-            href="/services"
+            href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20want%20to%20discuss%20a%20website%20and%20automation%20system."
+            target="_blank"
+            rel="noopener noreferrer"
             className="glass-card px-8 py-3.5 rounded-xl text-base text-foreground hover:border-primary/30 transition-all flex items-center justify-center gap-2"
           >
-            <Eye size={16} /> View Architecture
+            <WhatsAppLogo className="w-[16px] h-[16px]" /> Chat on WhatsApp
           </a>
         </div>
 

@@ -1,29 +1,25 @@
 import { AlertTriangle, XCircle } from "lucide-react";
 
-const errors = [
+const painPoints = [
   {
-    code: "ERR_001",
-    title: "Manual Follow-Ups Detected",
-    desc: "Your workflow is running in manual mode. Lead response time is 48+ hours.",
-    severity: "CRITICAL",
+    title: "Leads getting lost",
+    description:
+      "Inquiries from calls, forms, and WhatsApp stay scattered, so follow-ups are delayed or missed.",
   },
   {
-    code: "ERR_002",
-    title: "No CRM Integration Found",
-    desc: "Customer data scattered across spreadsheets. No unified pipeline.",
-    severity: "HIGH",
+    title: "No CRM setup",
+    description:
+      "Without a clear pipeline, your team cannot track lead status, priorities, or next action.",
   },
   {
-    code: "ERR_003",
-    title: "Conversion Rate Below 2%",
-    desc: "Funnel optimization is required. Current bounce rate exceeds the safe threshold.",
-    severity: "CRITICAL",
+    title: "No automation",
+    description:
+      "Manual reminders and replies consume time, while warm leads lose interest before your response.",
   },
   {
-    code: "ERR_004",
-    title: "Ad Budget Leak Identified",
-    desc: "No retargeting or follow-up automation. ROI tracking disabled.",
-    severity: "HIGH",
+    title: "Website not converting",
+    description:
+      "Visitors are not guided to act, which means traffic comes in but qualified leads do not.",
   },
 ];
 
@@ -33,20 +29,20 @@ export default function ProblemSection() {
       <div className="container-narrow">
         <div className="text-center mb-14 animate-fade-up">
           <span className="terminal-text text-destructive text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2">
-            <AlertTriangle size={16} /> System Diagnostics
+            <AlertTriangle size={16} /> Growth Bottlenecks
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3 text-balance">
-            <span className="gradient-text">Critical Errors</span> Detected
+            Still Managing Leads <span className="gradient-text">Manually?</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto terminal-text text-base">
-            Running diagnostics on your current business infrastructure...
+            These are the most common reasons businesses lose leads and sales opportunities.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-5">
-          {errors.map((error, index) => (
+          {painPoints.map((point, index) => (
             <div
-              key={error.code}
+              key={point.title}
               className="error-card p-5 animate-fade-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -55,16 +51,10 @@ export default function ProblemSection() {
                   <XCircle className="text-destructive" size={20} />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="terminal-text text-[10px] text-destructive/60">{error.code}</span>
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-destructive/15 text-destructive px-2 py-0.5 rounded-full">
-                      {error.severity}
-                    </span>
-                  </div>
                   <h3 className="font-heading font-semibold text-base text-foreground">
-                    {error.title}
+                    {point.title}
                   </h3>
-                  <p className="text-muted-foreground text-base mt-1 terminal-text">{error.desc}</p>
+                  <p className="text-muted-foreground text-sm mt-1">{point.description}</p>
                 </div>
               </div>
               <div className="status-dot status-dot-error absolute top-4 right-4" />

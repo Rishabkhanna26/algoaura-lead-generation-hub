@@ -1,45 +1,61 @@
-import { Clock, TrendingUp, Users } from "lucide-react";
+import { Building2, Rocket, Store } from "lucide-react";
 
-const reports = [
+const caseStudies = [
   {
     client: "Real Estate Agency",
-    metrics: [
-      { label: "Qualified Leads", value: "+312%", barHeight: "80%" },
-      { label: "Conversion Rate", value: "+47%", barHeight: "55%" },
-      { label: "Response Time", value: "<1hr", barHeight: "90%" },
-    ],
-    summary: "Automated follow-up system deployed in 24 hours",
-    icon: TrendingUp,
+    icon: Building2,
+    problem: "Leads from ads and website forms were unmanaged and response time was slow.",
+    built:
+      "A high-converting landing website, Zoho CRM pipeline, and WhatsApp follow-up workflow.",
+    tech: "Next.js, Zoho CRM, WhatsApp API, Calendly",
+    result: "More qualified lead conversations and faster follow-up with reduced manual work.",
+  },
+  {
+    client: "Local Dental Clinic",
+    icon: Building2,
+    problem:
+      "The clinic relied on referrals and calls only, with no consistent online lead generation flow.",
+    built:
+      "A new SEO-focused local website, WhatsApp click-to-chat flow, and appointment automation.",
+    tech: "Next.js, local SEO pages, WhatsApp automation, Calendly",
+    result: "More online appointment requests and improved local visibility for nearby searches.",
   },
   {
     client: "E-Commerce Brand",
-    metrics: [
-      { label: "Revenue Growth", value: "+320%", barHeight: "85%" },
-      { label: "Cart Recovery", value: "+68%", barHeight: "70%" },
-      { label: "Email Automation", value: "100%", barHeight: "100%" },
-    ],
-    summary: "Full funnel automation with WhatsApp integration",
-    icon: Users,
+    icon: Store,
+    problem: "Traffic was high but abandoned checkouts and delayed follow-ups hurt sales.",
+    built:
+      "A funnel-focused website with lead capture, automation sequences, and booking workflow.",
+    tech: "Next.js, CRM workflows, WhatsApp automation, analytics tracking",
+    result: "Improved conversion flow and better visibility of where leads dropped off.",
   },
   {
-    client: "Coaching Agency",
-    metrics: [
-      { label: "Monthly Leads", value: "450+", barHeight: "75%" },
-      { label: "Cost Per Lead", value: "-62%", barHeight: "65%" },
-      { label: "Booking Rate", value: "+89%", barHeight: "88%" },
-    ],
-    summary: "Lead generation system with AI-powered qualification",
-    icon: Clock,
+    client: "Coaching Business",
+    icon: Rocket,
+    problem: "No clear system to capture, qualify, and book discovery calls.",
+    built:
+      "Lead form routing, automated reminders, and a Calendly-based booking system with CRM sync.",
+    tech: "Next.js, Calendly, Zoho CRM, automated follow-ups",
+    result: "More booked calls and a reliable lead pipeline running with less daily effort.",
+  },
+  {
+    client: "Local Home Services Business",
+    icon: Building2,
+    problem:
+      "Most leads were coming through missed calls and manual messages, causing slow response time.",
+    built:
+      "A service-focused website with lead forms, CRM pipeline setup, and instant WhatsApp follow-ups.",
+    tech: "Next.js, Zoho CRM, WhatsApp API, form automation",
+    result: "Faster lead response and a more consistent flow of qualified service inquiries online.",
   },
   {
     client: "SaaS Startup",
-    metrics: [
-      { label: "Free Trial Sign-ups", value: "3x", barHeight: "90%" },
-      { label: "Churn Reduction", value: "-34%", barHeight: "45%" },
-      { label: "Onboarding", value: "Auto", barHeight: "95%" },
-    ],
-    summary: "Onboarding automation and retention workflows",
-    icon: TrendingUp,
+    icon: Rocket,
+    problem: "Sign-ups were inconsistent and onboarding tasks were handled manually.",
+    built:
+      "A conversion-first website revamp, onboarding automation, and lead lifecycle tracking dashboard.",
+    tech: "Next.js, CRM automations, webhook flows, analytics dashboard",
+    result: "Higher trial-to-call conversion and better control of the full lead-to-customer journey.",
   },
 ];
 
@@ -49,58 +65,46 @@ export default function Portfolio() {
       <div className="container-narrow">
         <div className="text-center mb-14 animate-fade-up">
           <span className="terminal-text text-primary text-sm font-semibold uppercase tracking-wider">
-            {"// Performance Reports"}
+            {"// Case Studies"}
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3">
-            System <span className="gradient-text">Output Data</span>
+            Project <span className="gradient-text">Results</span>
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {reports.map((report, reportIndex) => (
+          {caseStudies.map((study, reportIndex) => (
             <div
-              key={report.client}
+              key={study.client}
               className="system-card p-6 animate-fade-up"
               style={{ animationDelay: `${reportIndex * 0.1}s` }}
             >
               <div className="flex items-center justify-between mb-5">
                 <div>
                   <span className="terminal-text text-[10px] text-muted-foreground uppercase">
-                    Client Report
+                    Client Case
                   </span>
-                  <h3 className="font-heading font-semibold text-lg">{report.client}</h3>
+                  <h3 className="font-heading font-semibold text-lg">{study.client}</h3>
                 </div>
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <report.icon className="text-primary" size={20} />
+                  <study.icon className="text-primary" size={20} />
                 </div>
               </div>
 
-              <div className="flex items-end gap-4 h-28 mb-4">
-                {report.metrics.map((metric, metricIndex) => (
-                  <div
-                    key={metric.label}
-                    className="flex-1 flex flex-col items-center gap-1 h-full justify-end"
-                  >
-                    <span className="terminal-text text-xs font-bold text-primary">
-                      {metric.value}
-                    </span>
-                    <div
-                      className="w-full rounded-t-md bg-gradient-to-t from-primary/40 to-primary/80"
-                      style={{
-                        height: metric.barHeight,
-                        animationDelay: `${reportIndex * 0.1 + metricIndex * 0.1 + 0.2}s`,
-                      }}
-                    />
-                    <span className="terminal-text text-[9px] text-muted-foreground text-center leading-tight">
-                      {metric.label}
-                    </span>
-                  </div>
-                ))}
+              <div className="space-y-3 text-sm">
+                <p className="text-muted-foreground">
+                  <span className="text-foreground font-semibold">Problem:</span> {study.problem}
+                </p>
+                <p className="text-muted-foreground">
+                  <span className="text-foreground font-semibold">What we built:</span> {study.built}
+                </p>
+                <p className="text-muted-foreground">
+                  <span className="text-foreground font-semibold">Tech used:</span> {study.tech}
+                </p>
+                <p className="text-muted-foreground">
+                  <span className="text-foreground font-semibold">Result:</span> {study.result}
+                </p>
               </div>
-
-              <p className="text-muted-foreground text-xs terminal-text border-t border-border/50 pt-3">
-                {`-> ${report.summary}`}
-              </p>
             </div>
           ))}
         </div>

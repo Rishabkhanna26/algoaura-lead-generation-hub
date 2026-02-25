@@ -12,7 +12,7 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ hideLinks = false }) {
   const [scrolled, setScrolled] = useState(false);
   const [navVisible, setNavVisible] = useState(true);
   const [open, setOpen] = useState(false);
@@ -111,45 +111,59 @@ export default function Navbar() {
           />
         </Link>
 
-        <div className="hidden md:flex items-center gap-6 lg:gap-8 pr-1">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-sm transition-colors terminal-text ${
-                pathname === link.href
-                  ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {link.label}
+        {hideLinks ? (
+          <div className="hidden md:flex items-center">
+            <Link href="/contact" className="gradient-btn px-5 py-2 rounded-lg text-sm">
+              Book Consultation
             </Link>
-          ))}
+          </div>
+        ) : (
+          <div className="hidden md:flex items-center gap-6 lg:gap-8 pr-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm transition-colors terminal-text ${
+                  pathname === link.href
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="glass-card p-2 rounded-lg hover:border-primary/40 transition-colors"
+              aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+              title={theme === "dark" ? "Light mode" : "Dark mode"}
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            <Link href="/contact" className="gradient-btn px-5 py-2 rounded-lg text-sm">
+              Book Consultation
+            </Link>
+          </div>
+        )}
+
+        {hideLinks ? (
+          <Link href="/contact" className="md:hidden gradient-btn px-4 py-2 rounded-lg text-xs">
+            Book
+          </Link>
+        ) : (
           <button
             type="button"
-            onClick={toggleTheme}
-            className="glass-card p-2 rounded-lg hover:border-primary/40 transition-colors"
-            aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
-            title={theme === "dark" ? "Light mode" : "Dark mode"}
+            className="md:hidden text-foreground"
+            onClick={() => setOpen((current) => !current)}
+            aria-label="Toggle menu"
           >
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            {open ? <X size={24} /> : <Menu size={24} />}
           </button>
-          <Link href="/contact" className="gradient-btn px-5 py-2 rounded-lg text-sm">
-            Initialize
-          </Link>
-        </div>
-
-        <button
-          type="button"
-          className="md:hidden text-foreground"
-          onClick={() => setOpen((current) => !current)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        )}
       </div>
 
-      {open && (
+      {!hideLinks && open && (
         <div className="md:hidden glass-card border-t border-white/5 mx-2 mb-2 rounded-xl px-4 pb-6 pt-3 animate-fade-up">
           <button
             type="button"
@@ -178,7 +192,7 @@ export default function Navbar() {
             onClick={() => setOpen(false)}
             className="gradient-btn inline-block mt-2 px-5 py-2 rounded-lg text-sm"
           >
-            Initialize
+            Book Consultation
           </Link>
         </div>
       )}
