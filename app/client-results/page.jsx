@@ -4,10 +4,10 @@ import Testimonials from "../../components/Testimonials";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const logsTitle = "Client Testimonials for Automation Projects";
-const logsDescription =
+const resultsTitle = "Client Results for Website and Automation Projects";
+const resultsDescription =
   "Read verified client feedback on website development, CRM integration, WhatsApp automation, and lead systems delivered by the AlgoAura team with real outcomes.";
-const logsKeywords = [
+const resultsKeywords = [
   "client testimonials",
   "automation reviews",
   "lead generation testimonials",
@@ -17,30 +17,30 @@ const logsKeywords = [
 ];
 
 export const metadata = buildPageMetadata({
-  title: logsTitle,
-  description: logsDescription,
-  pathname: "/logs",
-  keywords: logsKeywords,
+  title: resultsTitle,
+  description: resultsDescription,
+  pathname: "/client-results",
+  keywords: resultsKeywords,
 });
 
-const logsSchema = buildWebPageSchema({
-  title: logsTitle,
-  description: logsDescription,
-  pathname: "/logs",
-  keywords: logsKeywords,
+const resultsSchema = buildWebPageSchema({
+  title: resultsTitle,
+  description: resultsDescription,
+  pathname: "/client-results",
+  keywords: resultsKeywords,
 });
 
-export default function LogsPage() {
+export default function ClientResultsPage() {
   return (
     <div className="min-h-screen bg-background relative">
       <VisualEffects />
       <Navbar />
       <main className="pt-32 md:pt-36">
-        <h1 className="sr-only">AlgoAura Client Logs and Testimonials</h1>
+        <h1 className="sr-only">AlgoAura Client Results and Testimonials</h1>
         <Testimonials />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(logsSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(resultsSchema) }}
         />
       </main>
       <Footer />

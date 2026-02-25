@@ -38,6 +38,13 @@ export default function AboutPage() {
     "Calendly integration for zero-friction booking",
   ];
 
+  const principles = [
+    "Business outcomes first, tools second",
+    "Fast implementation with clear milestones",
+    "Track everything that impacts conversion",
+    "Continuous optimization after launch",
+  ];
+
   return (
     <div className="min-h-screen bg-background relative">
       <VisualEffects />
@@ -98,6 +105,49 @@ export default function AboutPage() {
                 Every project is built around one goal: generate better leads and convert them with
                 less manual effort.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding">
+          <div className="container-narrow">
+            <div className="grid lg:grid-cols-2 gap-6">
+              <article className="system-card p-7 md:p-8">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-5">
+                  How We Work With Clients
+                </h2>
+                <ol className="space-y-4 text-muted-foreground">
+                  <li>
+                    <span className="text-foreground font-semibold">1. Discovery:</span> We map
+                    your current lead flow, tools, and bottlenecks.
+                  </li>
+                  <li>
+                    <span className="text-foreground font-semibold">2. System Design:</span> We
+                    define website, CRM, WhatsApp, and booking architecture.
+                  </li>
+                  <li>
+                    <span className="text-foreground font-semibold">3. Build and Launch:</span> We
+                    implement, test, and deploy each connected layer.
+                  </li>
+                  <li>
+                    <span className="text-foreground font-semibold">4. Optimization:</span> We use
+                    conversion data to improve performance continuously.
+                  </li>
+                </ol>
+              </article>
+
+              <article className="system-card p-7 md:p-8">
+                <h2 className="text-2xl md:text-3xl font-heading font-bold mb-5">
+                  Operating Principles
+                </h2>
+                <div className="space-y-3">
+                  {principles.map((item) => (
+                    <div key={item} className="glass-card p-4 rounded-xl">
+                      <p className="text-muted-foreground">{item}</p>
+                    </div>
+                  ))}
+                </div>
+              </article>
             </div>
           </div>
         </section>

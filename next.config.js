@@ -20,6 +20,21 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/modules",
+        destination: "/solutions",
+        permanent: true,
+      },
+      {
+        source: "/logs",
+        destination: "/client-results",
+        permanent: true,
+      },
+      {
+        source: "/protocol",
+        destination: "/process",
+        permanent: true,
+      },
+      {
         source: "/:path*",
         has: [{ type: "host", value: "www.algoaura.vercel.app" }],
         destination: "https://algoaura.vercel.app/:path*",

@@ -27,7 +27,7 @@ export default function Process() {
       <div className="container-narrow">
         <div className="text-center mb-14 animate-fade-up">
           <span className="terminal-text text-primary text-sm font-semibold uppercase tracking-wider">
-            {"// Deployment Protocol"}
+            {"// Delivery Process"}
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3">
             How We <span className="gradient-text">Deploy</span>

@@ -1,9 +1,12 @@
 import Footer from "../../components/Footer";
+import FaqAccordion from "../../components/FaqAccordion";
+import IntegrationMatrix from "../../components/IntegrationMatrix";
 import Navbar from "../../components/Navbar";
 import Services from "../../components/Services";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 import { BadgeCheck } from "lucide-react";
+import Link from "next/link";
 
 const servicesTitle = "Website, CRM and WhatsApp Automation Services";
 const servicesDescription =
@@ -45,6 +48,29 @@ export default function ServicesPage() {
     "Lead routing and follow-up systems connected end-to-end.",
   ];
 
+  const serviceFaqItems = [
+    {
+      question: "Which businesses are the best fit for these services?",
+      answer:
+        "Startups, local businesses, coaches, service brands, and growing teams that want better lead flow and faster follow-up.",
+    },
+    {
+      question: "Do I need to migrate everything to one new tool?",
+      answer:
+        "Not always. We can integrate your existing stack and only replace parts that are slowing growth or creating lead loss.",
+    },
+    {
+      question: "Can we start with one module and expand later?",
+      answer:
+        "Yes. Many clients start with website + CRM basics and then add automation, booking, and optimization in phases.",
+    },
+    {
+      question: "How do you measure progress after launch?",
+      answer:
+        "We track lead source quality, response time, booking rates, and conversion movement to guide the next optimization cycle.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-background relative">
       <VisualEffects />
@@ -70,6 +96,44 @@ export default function ServicesPage() {
         </section>
 
         <Services />
+
+        <section className="section-padding">
+          <div className="container-narrow">
+            <div className="text-center mb-10 animate-fade-up">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold">
+                Detailed Service <span className="gradient-text">Guides</span>
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <article className="system-card p-7 md:p-8">
+                <h3 className="text-2xl font-heading font-bold">Website Development Guide</h3>
+                <p className="text-muted-foreground mt-3">
+                  Learn our full approach to architecture, speed optimization, conversion sections,
+                  and SEO-friendly development standards.
+                </p>
+                <Link
+                  href="/website-development"
+                  className="inline-flex mt-5 glass-card px-5 py-2.5 rounded-lg text-sm hover:border-primary/30 transition-colors"
+                >
+                  Explore Website Development
+                </Link>
+              </article>
+              <article className="system-card p-7 md:p-8">
+                <h3 className="text-2xl font-heading font-bold">CRM and WhatsApp Automation Guide</h3>
+                <p className="text-muted-foreground mt-3">
+                  See how we build CRM pipelines, lead routing, automated follow-ups, and booking
+                  workflows that reduce manual effort.
+                </p>
+                <Link
+                  href="/crm-whatsapp-automation"
+                  className="inline-flex mt-5 glass-card px-5 py-2.5 rounded-lg text-sm hover:border-primary/30 transition-colors"
+                >
+                  Explore CRM and Automation
+                </Link>
+              </article>
+            </div>
+          </div>
+        </section>
 
         <section className="section-padding bg-secondary/20">
           <div className="container-narrow grid lg:grid-cols-2 gap-6">
@@ -116,6 +180,12 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+        <IntegrationMatrix />
+        <FaqAccordion
+          title="Service Questions and Answers"
+          subtitle="Everything clients ask before selecting a website and automation execution partner."
+          items={serviceFaqItems}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}

@@ -55,6 +55,16 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/website-development" className="hover:text-foreground transition-colors">
+                  Website Development
+                </a>
+              </li>
+              <li>
+                <a href="/crm-whatsapp-automation" className="hover:text-foreground transition-colors">
+                  CRM and Automation
+                </a>
+              </li>
+              <li>
                 <a href="/portfolio" className="hover:text-foreground transition-colors">
                   Portfolio
                 </a>
@@ -65,13 +75,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/modules" className="hover:text-foreground transition-colors">
-                  Modules
+                <a href="/solutions" className="hover:text-foreground transition-colors">
+                  Solutions
                 </a>
               </li>
               <li>
-                <a href="/protocol" className="hover:text-foreground transition-colors">
-                  Protocol
+                <a href="/process" className="hover:text-foreground transition-colors">
+                  Process
                 </a>
               </li>
               <li>
@@ -80,8 +90,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/logs" className="hover:text-foreground transition-colors">
-                  Logs
+                <a href="/client-results" className="hover:text-foreground transition-colors">
+                  Client Results
                 </a>
               </li>
               <li>
@@ -99,7 +109,15 @@ export default function Footer() {
                 <Mail size={14} className="text-primary/50" /> teamalgoaura@gmail.com
               </li>
               <li className="flex items-center gap-2">
-                <MapPin size={14} className="text-primary/50" /> Serving Worldwide
+                <MapPin size={14} className="text-primary/50" />
+                <a
+                  href="https://maps.app.goo.gl/AW5grbVnSfvEQB3f9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                >
+                  Office Location
+                </a>
               </li>
             </ul>
           </div>

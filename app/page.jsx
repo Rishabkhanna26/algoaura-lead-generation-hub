@@ -1,5 +1,10 @@
 import CTA from "../components/CTA";
+import AutomationRoadmap from "../components/AutomationRoadmap";
 import ContactForm from "../components/ContactForm";
+import FaqAccordion from "../components/FaqAccordion";
+import GrowthEstimator from "../components/GrowthEstimator";
+import IntegrationMatrix from "../components/IntegrationMatrix";
+import LocationSection from "../components/LocationSection";
 import Portfolio from "../components/Portfolio";
 import ProblemSection from "../components/ProblemSection";
 import Services from "../components/Services";
@@ -42,6 +47,29 @@ const homeSchema = buildWebPageSchema({
   keywords: homeKeywords,
 });
 
+const homeFaqItems = [
+  {
+    question: "How quickly can we launch a complete website and automation setup?",
+    answer:
+      "Most projects launch an initial working version in 2-4 weeks depending on pages, integrations, and workflow complexity.",
+  },
+  {
+    question: "Can you work with our existing website and CRM tools?",
+    answer:
+      "Yes. We can improve your current setup, integrate CRM and WhatsApp flows, and add tracking without rebuilding everything from scratch.",
+  },
+  {
+    question: "Do you handle only websites or complete lead systems?",
+    answer:
+      "We handle complete systems: website, funnel flow, CRM pipeline, WhatsApp automation, booking workflows, and reporting.",
+  },
+  {
+    question: "How do you ensure SEO is not harmed by design changes?",
+    answer:
+      "We keep semantic structure, clean headings, crawl-friendly markup, and performance-focused implementation while adding new sections.",
+  },
+];
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-background relative">
@@ -58,12 +86,24 @@ export default function HomePage() {
           <SolutionSection />
         </div>
         <div className="cv-auto">
+          <SectionSeparator label="Roadmap" />
+          <AutomationRoadmap />
+        </div>
+        <div className="cv-auto">
           <SectionSeparator label="Services" />
           <Services />
         </div>
         <div className="cv-auto">
+          <SectionSeparator label="Integrations" />
+          <IntegrationMatrix />
+        </div>
+        <div className="cv-auto">
           <SectionSeparator label="Audience" />
           <WhoThisIsFor />
+        </div>
+        <div className="cv-auto">
+          <SectionSeparator label="Projection" />
+          <GrowthEstimator />
         </div>
         <div className="cv-auto">
           <SectionSeparator label="Results" />
@@ -72,6 +112,18 @@ export default function HomePage() {
         <div className="cv-auto">
           <SectionSeparator label="Testimonials" />
           <Testimonials />
+        </div>
+        <div className="cv-auto">
+          <SectionSeparator label="FAQ" />
+          <FaqAccordion
+            title="Questions Before You Start"
+            subtitle="Clear answers on timelines, integrations, and how our system-driven execution works."
+            items={homeFaqItems}
+          />
+        </div>
+        <div className="cv-auto">
+          <SectionSeparator label="Location" />
+          <LocationSection />
         </div>
         <div className="cv-auto">
           <SectionSeparator label="Get Started" />

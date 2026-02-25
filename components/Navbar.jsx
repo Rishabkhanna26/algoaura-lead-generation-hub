@@ -22,6 +22,17 @@ export default function Navbar({ hideLinks = false }) {
   const lastScrollYRef = useRef(0);
 
   useEffect(() => {
+    const syncFromScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      setNavVisible(true);
+      lastScrollYRef.current = y;
+    };
+
+    syncFromScroll();
+  }, [pathname]);
+
+  useEffect(() => {
     const onScroll = () => {
       if (scrollRafRef.current) return;
 
@@ -31,16 +42,25 @@ export default function Navbar({ hideLinks = false }) {
         const nextScrolled = currentY > 20;
         setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
 
+        if (open) {
+          setNavVisible((prev) => (prev ? prev : true));
+          lastScrollYRef.current = currentY;
+          return;
+        }
+
         if (currentY <= 10) {
           setNavVisible(true);
           lastScrollYRef.current = currentY;
           return;
         }
 
-        const deltaY = currentY - lastScrollYRef.current;
-        if (Math.abs(deltaY) > 6 && !open) {
-          const shouldShow = deltaY < 0;
-          setNavVisible((prev) => (prev === shouldShow ? prev : shouldShow));
+        const previousY = lastScrollYRef.current;
+        if (currentY < previousY) {
+          // Show navbar immediately on any upward scroll for consistent access.
+          setNavVisible((prev) => (prev ? prev : true));
+        } else if (currentY > previousY && currentY > 96) {
+          // Hide navbar only after moving below the first fold.
+          setNavVisible((prev) => (prev ? false : prev));
         }
 
         lastScrollYRef.current = currentY;
@@ -56,7 +76,7 @@ export default function Navbar({ hideLinks = false }) {
         window.cancelAnimationFrame(scrollRafRef.current);
       }
     };
-  }, [open]);
+  }, [open, pathname]);
 
   useEffect(() => {
     if (open) {
@@ -90,7 +110,7 @@ export default function Navbar({ hideLinks = false }) {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-transform transition-colors duration-300 ${
-        navVisible ? "translate-y-0" : "-translate-y-full"
+        navVisible ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
       } ${
         scrolled ? "glass-card border-b border-white/5" : "bg-transparent"
       }`}

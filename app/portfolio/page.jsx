@@ -1,6 +1,7 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Portfolio from "../../components/Portfolio";
+import ProjectShowcase from "../../components/ProjectShowcase";
 import Testimonials from "../../components/Testimonials";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
@@ -39,6 +40,7 @@ export default function PortfolioPage() {
       <main className="pt-32 md:pt-36">
         <h1 className="sr-only">Portfolio and Case Studies</h1>
         <Portfolio />
+        <ProjectShowcase />
         <Testimonials />
         <script
           type="application/ld+json"

@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 
 const lines = [
   "Initializing AlgoAura Core...",
-  "Loading Growth Modules...",
+  "Loading Growth Solutions...",
   "Connecting Automation Layers...",
   "System Ready.",
 ];

@@ -76,6 +76,7 @@ const schemaGraph = [
     name: "AlgoAura",
     url: siteUrl,
     logo: `${siteUrl}/algoaura_logo.webp`,
+    sameAs: ["https://maps.app.goo.gl/AW5grbVnSfvEQB3f9"],
     contactPoint: [
       {
         "@type": "ContactPoint",

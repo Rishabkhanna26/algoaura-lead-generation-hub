@@ -1,12 +1,13 @@
 import { Cog, GitBranch, Globe, Target } from "lucide-react";
 
-const modules = [
+const serviceItems = [
   {
     icon: Globe,
     title: "High-Converting Website Development",
     desc: "Modern, fast, and SEO-ready websites built to turn traffic into qualified leads.",
     version: "01",
     status: "ACTIVE",
+    href: "/website-development",
   },
   {
     icon: Cog,
@@ -14,6 +15,7 @@ const modules = [
     desc: "Clean lead pipelines with Zoho and connected tools so every inquiry is tracked.",
     version: "02",
     status: "ACTIVE",
+    href: "/crm-whatsapp-automation",
   },
   {
     icon: Target,
@@ -21,6 +23,7 @@ const modules = [
     desc: "Instant follow-ups, reminders, and automation flows that keep leads engaged 24/7.",
     version: "03",
     status: "ACTIVE",
+    href: "/crm-whatsapp-automation",
   },
   {
     icon: GitBranch,
@@ -28,6 +31,7 @@ const modules = [
     desc: "Calendly, landing pages, and conversion flows connected into one simple system.",
     version: "04",
     status: "ACTIVE",
+    href: "/contact",
   },
 ];
 
@@ -45,33 +49,41 @@ export default function Services() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {modules.map((module, index) => (
+          {serviceItems.map((service, index) => (
             <div
-              key={module.title}
+              key={service.title}
               className="module-card p-6 relative animate-fade-up"
               style={{ animationDelay: `${index * 0.08}s` }}
             >
               <div className="flex items-center justify-between mb-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <module.icon className="text-primary" size={24} />
+                  <service.icon className="text-primary" size={24} />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="terminal-text text-[10px] text-muted-foreground">#{module.version}</span>
+                  <span className="terminal-text text-[10px] text-muted-foreground">#{service.version}</span>
                   <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-success/15 text-success">
-                    {module.status}
+                    {service.status}
                   </span>
                 </div>
               </div>
 
-              <h3 className="font-heading font-semibold text-lg">{module.title}</h3>
-              <p className="text-muted-foreground text-base mt-2">{module.desc}</p>
+              <h3 className="font-heading font-semibold text-lg">{service.title}</h3>
+              <p className="text-muted-foreground text-base mt-2">{service.desc}</p>
 
               <div className="mt-4 pt-3 border-t border-border/50">
-                <div className="flex items-center gap-2">
-                  <div className="status-dot status-dot-online" />
-                  <span className="terminal-text text-[10px] text-muted-foreground">
-                    Service Included
+                <div className="flex items-center justify-between gap-2">
+                  <span className="flex items-center gap-2">
+                    <div className="status-dot status-dot-online" />
+                    <span className="terminal-text text-[10px] text-muted-foreground">
+                      Service Included
+                    </span>
                   </span>
+                  <a
+                    href={service.href}
+                    className="terminal-text text-[10px] uppercase tracking-wide text-primary hover:text-primary/80"
+                  >
+                    Learn More
+                  </a>
                 </div>
               </div>
             </div>
