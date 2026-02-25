@@ -75,7 +75,7 @@ const schemaGraph = [
       {
         "@type": "ContactPoint",
         contactType: "sales",
-        email: "hello@algoaura.com",
+        email: "teamalgoaura@gmail.com",
       },
     ],
   },

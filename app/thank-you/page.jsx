@@ -49,7 +49,7 @@ function parseName(value) {
 }
 
 const whatsappHref =
-  "https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20just%20submitted%20a%20form.";
+  "https://wa.me/918059649659?text=Hi%20AlgoAura,%20I%20just%20submitted%20a%20form.";
 const calendlyHref = "https://calendly.com/teamalgoaura/30min";
 
 export default async function ThankYouPage({ searchParams }) {
@@ -162,7 +162,7 @@ export default async function ThankYouPage({ searchParams }) {
                   <p className="text-xs terminal-text uppercase tracking-wide text-muted-foreground mb-1">
                     Phone
                   </p>
-                  <a href="tel:+918708767499" className="text-lg font-semibold hover:text-primary">
+                  <a href="tel:+918059649659" className="text-lg font-semibold hover:text-primary">
                     +91 87087 67499
                   </a>
                 </div>
@@ -170,8 +170,8 @@ export default async function ThankYouPage({ searchParams }) {
                   <p className="text-xs terminal-text uppercase tracking-wide text-muted-foreground mb-1">
                     Email
                   </p>
-                  <a href="mailto:hello@algoaura.com" className="text-lg font-semibold hover:text-primary">
-                    hello@algoaura.com
+                  <a href="mailto:teamalgoaura@gmail.com" className="text-lg font-semibold hover:text-primary">
+                    teamalgoaura@gmail.com
                   </a>
                 </div>
               </div>

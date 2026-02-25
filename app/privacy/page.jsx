@@ -53,7 +53,7 @@ export default function PrivacyPage() {
               analytics, communication, and infrastructure.
             </p>
             <p className="text-muted-foreground">
-              For privacy questions, contact us at hello@algoaura.com.
+              For privacy questions, contact us at teamalgoaura@gmail.com.
             </p>
           </div>
         </section>

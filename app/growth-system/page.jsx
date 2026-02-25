@@ -74,7 +74,7 @@ export default function GrowthSystemPage() {
                 Book Free Consultation
               </a>
               <a
-                href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20want%20a%20growth%20system%20for%20my%20business."
+                href="https://wa.me/918059649659?text=Hi%20AlgoAura,%20I%20want%20a%20growth%20system%20for%20my%20business."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass-card px-8 py-3.5 rounded-xl text-base inline-flex items-center justify-center gap-2"
@@ -183,7 +183,7 @@ export default function GrowthSystemPage() {
                   <PhoneCall size={17} /> Book on Calendly
                 </a>
                 <a
-                  href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20just%20submitted%20the%20growth-system%20form."
+                  href="https://wa.me/918059649659?text=Hi%20AlgoAura,%20I%20just%20submitted%20the%20growth-system%20form."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card px-8 py-3.5 rounded-xl text-base inline-flex items-center justify-center gap-2"

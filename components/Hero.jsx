@@ -243,7 +243,7 @@ export default function Hero() {
             Book Free Consultation <ArrowRight size={18} />
           </a>
           <a
-            href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20want%20to%20discuss%20a%20website%20and%20automation%20system."
+            href="https://wa.me/918059649659?text=Hi%20AlgoAura,%20I%20want%20to%20discuss%20a%20website%20and%20automation%20system."
             target="_blank"
             rel="noopener noreferrer"
             className="glass-card px-8 py-3.5 rounded-xl text-base text-foreground hover:border-primary/30 transition-all flex items-center justify-center gap-2"

@@ -52,7 +52,7 @@ export default function TermsPage() {
               each project.
             </p>
             <p className="text-muted-foreground">
-              For legal questions, contact us at hello@algoaura.com.
+              For legal questions, contact us at teamalgoaura@gmail.com.
             </p>
           </div>
         </section>

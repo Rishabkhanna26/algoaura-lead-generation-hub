@@ -96,7 +96,7 @@ export default function Footer() {
             <h4 className="font-heading font-semibold mb-3 terminal-text text-base">Connect</h4>
             <ul className="space-y-2 text-base text-muted-foreground">
               <li className="flex items-center gap-2">
-                <Mail size={14} className="text-primary/50" /> hello@algoaura.com
+                <Mail size={14} className="text-primary/50" /> teamalgoaura@gmail.com
               </li>
               <li className="flex items-center gap-2">
                 <MapPin size={14} className="text-primary/50" /> Serving Worldwide

@@ -40,7 +40,7 @@ export default function ContactForm({
                   Want a faster reply? Message us directly and we will help you immediately.
                 </p>
                 <a
-                  href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20just%20submitted%20a%20form."
+                  href="https://wa.me/918059649659?text=Hi%20AlgoAura,%20I%20just%20submitted%20a%20form."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[hsl(142,70%,35%)] hover:bg-[hsl(142,70%,30%)] text-white px-6 py-3 rounded-lg transition-colors font-medium text-base"
