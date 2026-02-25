@@ -4,9 +4,9 @@ import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const accessTitle = "Request Access to Your Growth Automation System";
+const accessTitle = "Request Your Website and Automation Strategy";
 const accessDescription =
-  "Submit an access request to start your custom lead generation, CRM automation, and WhatsApp automation system with AlgoAura.";
+  "Submit your details to request a custom website and automation strategy. We map CRM, WhatsApp, booking, and lead workflows to match your business goals.";
 const accessKeywords = [
   "request system access",
   "automation onboarding form",

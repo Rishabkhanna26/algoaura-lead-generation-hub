@@ -13,9 +13,9 @@ import VisualEffects from "../components/VisualEffects";
 import WhoThisIsFor from "../components/WhoThisIsFor";
 import { buildPageMetadata, buildWebPageSchema } from "../lib/seo";
 
-const homeTitle = "Lead Generation, CRM and WhatsApp Automation Agency";
+const homeTitle = "Web Development and Automation for Growing Businesses";
 const homeDescription =
-  "Web development plus smart automation for growing businesses. We build modern websites with CRM, WhatsApp, booking, and lead automation.";
+  "Need web development plus smart automation? We build SEO-ready websites with CRM, WhatsApp, and booking systems to capture, track, and convert more leads.";
 const homeKeywords = [
   "web development for businesses",
   "smart automation agency",

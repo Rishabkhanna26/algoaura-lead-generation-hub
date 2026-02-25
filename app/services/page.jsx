@@ -5,10 +5,9 @@ import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 import { BadgeCheck } from "lucide-react";
 
-const servicesTitle =
-  "Website Development, CRM, WhatsApp and Funnel Services";
+const servicesTitle = "Website, CRM and WhatsApp Automation Services";
 const servicesDescription =
-  "Explore AlgoAura services: high-converting website development, CRM setup, WhatsApp automation, and booking funnel systems.";
+  "Explore high-converting website development, CRM integration, WhatsApp automation, and booking funnel setup designed to turn traffic into qualified leads.";
 const servicesKeywords = [
   "website development service",
   "crm setup and integration",

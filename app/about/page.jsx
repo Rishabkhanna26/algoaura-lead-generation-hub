@@ -4,9 +4,9 @@ import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 import { BadgeCheck, BriefcaseBusiness, Cpu, UserRound } from "lucide-react";
 
-const aboutTitle = "About AlgoAura - Web Development and Automation Partner";
+const aboutTitle = "About Our Web Development and Automation Team";
 const aboutDescription =
-  "Meet the team behind AlgoAura. We build websites, CRM systems, and automation setups that help new and growing businesses scale.";
+  "Meet the AlgoAura team helping startups and local businesses with web development, CRM setup, WhatsApp automation, and conversion-focused growth systems.";
 const aboutKeywords = [
   "about AlgoAura",
   "full stack developer automation",

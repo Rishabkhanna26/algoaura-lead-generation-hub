@@ -4,9 +4,9 @@ import Testimonials from "../../components/Testimonials";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const logsTitle = "Client Testimonials and Success Logs";
+const logsTitle = "Client Testimonials for Automation Projects";
 const logsDescription =
-  "Read verified client feedback and success logs from AlgoAura automation, lead generation, and CRM transformation projects.";
+  "Read verified client feedback on website development, CRM integration, WhatsApp automation, and lead systems delivered by the AlgoAura team with real outcomes.";
 const logsKeywords = [
   "client testimonials",
   "automation reviews",

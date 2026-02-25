@@ -4,9 +4,9 @@ import Portfolio from "../../components/Portfolio";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const reportsTitle = "Performance Reports for Lead and Funnel Systems";
+const reportsTitle = "Performance Reports for Automation Projects";
 const reportsDescription =
-  "Analyze client performance reports from AlgoAura campaigns, including lead growth, conversion metrics, and automation outcomes.";
+  "Analyze project results across web development and automation, including lead quality, response time, funnel conversion, and workflow performance metrics.";
 const reportsKeywords = [
   "performance reports",
   "lead generation metrics",

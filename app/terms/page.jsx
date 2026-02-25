@@ -3,9 +3,9 @@ import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const termsTitle = "Terms of Service";
+const termsTitle = "Terms for Website and Automation Services";
 const termsDescription =
-  "Read the service terms for working with AlgoAura, including project scope, responsibilities, and delivery agreements.";
+  "Review terms for website and automation services, including scope, delivery, responsibilities, communication timelines, project rights, and support boundaries.";
 const termsKeywords = [
   "terms of service",
   "service agreement terms",

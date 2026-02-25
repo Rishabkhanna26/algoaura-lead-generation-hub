@@ -5,9 +5,9 @@ import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 import WhatsAppLogo from "../../components/WhatsAppLogo";
 
-const growthSystemTitle = "Growth System Landing Page for Business Automation";
+const growthSystemTitle = "Free Growth System Consultation for Businesses";
 const growthSystemDescription =
-  "Book a free consultation to get a complete growth system: website, CRM setup, WhatsApp automation, Calendly booking, and lead tracking.";
+  "Get a focused growth system plan with web development, CRM setup, WhatsApp automation, and booking workflows designed to increase qualified leads fast.";
 const growthSystemKeywords = [
   "growth system",
   "business automation funnel",
@@ -21,7 +21,6 @@ export const metadata = buildPageMetadata({
   description: growthSystemDescription,
   pathname: "/growth-system",
   keywords: growthSystemKeywords,
-  noindex: true,
 });
 
 const growthSystemSchema = buildWebPageSchema({

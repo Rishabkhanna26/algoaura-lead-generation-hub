@@ -4,9 +4,9 @@ import Process from "../../components/Process";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const protocolTitle = "Automation Deployment Protocol and Process";
+const protocolTitle = "Our Website and Automation Delivery Process";
 const protocolDescription =
-  "See the AlgoAura deployment process for planning, building, and optimizing lead generation systems, CRM setups, and funnel automation.";
+  "Learn our step-by-step process for planning, building, launching, and optimizing your website, CRM, WhatsApp automation, and booking funnel systems for growth.";
 const protocolKeywords = [
   "automation deployment process",
   "growth system implementation",

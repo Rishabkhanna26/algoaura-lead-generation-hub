@@ -4,9 +4,9 @@ import Services from "../../components/Services";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const modulesTitle = "Growth Modules for Lead and CRM Automation";
+const modulesTitle = "Growth Modules for Website and Lead Automation";
 const modulesDescription =
-  "Discover the AlgoAura growth modules including web systems, automation core, lead acquisition layers, and AI-powered workflows.";
+  "Review the core modules we deploy: conversion-ready websites, CRM pipelines, WhatsApp follow-ups, booking workflows, and lead tracking dashboards for growth.";
 const modulesKeywords = [
   "growth modules",
   "automation modules",

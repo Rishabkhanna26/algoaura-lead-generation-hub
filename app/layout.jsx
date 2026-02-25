@@ -21,40 +21,40 @@ const fontMono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "AlgoAura | Web Development and Smart Automation",
+    default: "Web Development and Automation for Growing Businesses | AlgoAura",
     template: "%s | AlgoAura",
   },
   description:
-    "Web development plus smart automation for growing businesses. CRM, WhatsApp, booking, and lead tracking systems built to convert.",
-  keywords: [
-    "web development agency",
-    "smart automation",
-    "CRM setup and integration",
-    "WhatsApp automation",
-    "booking automation",
-    "lead generation system",
-  ],
+    "Need a modern website that converts leads? AlgoAura builds SEO-friendly websites with CRM, WhatsApp, and booking automation to grow your business faster.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
     type: "website",
     url: siteUrl,
     siteName: "AlgoAura",
-    title: "AlgoAura | Web Development and Smart Automation",
+    title: "Web Development and Automation for Growing Businesses | AlgoAura",
     description:
-      "Web development plus smart automation for growing businesses. CRM, WhatsApp, booking, and lead tracking systems built to convert.",
+      "Need a modern website that converts leads? AlgoAura builds SEO-friendly websites with CRM, WhatsApp, and booking automation to grow your business faster.",
     images: [
       {
         url: "/algoaura_logo.webp",
-        width: 900,
-        height: 600,
-        alt: "AlgoAura",
+        width: 1200,
+        height: 630,
+        alt: "AlgoAura preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AlgoAura | Web Development and Smart Automation",
+    title: "Web Development and Automation for Growing Businesses | AlgoAura",
     description:
-      "Web development plus smart automation for growing businesses. CRM, WhatsApp, booking, and lead tracking systems built to convert.",
+      "Need a modern website that converts leads? AlgoAura builds SEO-friendly websites with CRM, WhatsApp, and booking automation to grow your business faster.",
     images: ["/algoaura_logo.webp"],
   },
   icons: {
@@ -62,6 +62,11 @@ export const metadata = {
     shortcut: "/favicon.ico",
     apple: "/favicon.ico",
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 const schemaGraph = [
@@ -85,7 +90,7 @@ const schemaGraph = [
     name: "AlgoAura",
     url: siteUrl,
     description:
-      "Web development plus smart automation for growing businesses. CRM, WhatsApp, booking, and lead tracking systems built to convert.",
+      "Need a modern website that converts leads? AlgoAura builds SEO-friendly websites with CRM, WhatsApp, and booking automation to grow your business faster.",
   },
 ];
 

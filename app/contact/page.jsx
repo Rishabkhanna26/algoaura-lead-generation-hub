@@ -4,9 +4,9 @@ import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const contactTitle = "Contact AlgoAura for Lead Generation Automation";
+const contactTitle = "Book a Free Website and Automation Consultation";
 const contactDescription =
-  "Talk with AlgoAura about CRM automation, lead generation funnels, WhatsApp automation, and conversion-focused growth systems.";
+  "Book a free consultation for website development, CRM setup, WhatsApp automation, and lead workflows tailored to your business goals and growth stage.";
 const contactKeywords = [
   "contact AlgoAura",
   "book automation strategy call",

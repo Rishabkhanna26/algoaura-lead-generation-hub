@@ -5,9 +5,9 @@ import Testimonials from "../../components/Testimonials";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const portfolioTitle = "Lead Generation and Automation Case Studies";
+const portfolioTitle = "Website and Automation Case Studies with Results";
 const portfolioDescription =
-  "Review AlgoAura client outcomes across lead generation, sales funnels, CRM automation, and business growth systems.";
+  "See real client projects where AlgoAura improved lead generation using conversion-focused websites, CRM workflows, WhatsApp automation, and booking systems.";
 const portfolioKeywords = [
   "lead generation case studies",
   "automation case studies",

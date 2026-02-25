@@ -12,9 +12,9 @@ import VisualEffects from "../../components/VisualEffects";
 import WhatsAppLogo from "../../components/WhatsAppLogo";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const thankYouTitle = "Thank You for Contacting AlgoAura";
+const thankYouTitle = "Thank You - Consultation Request Received";
 const thankYouDescription =
-  "Your request has been received. AlgoAura will contact you within 12-24 hours to discuss your growth automation strategy.";
+  "Your consultation request was received successfully. Our team will review your details and contact you within 12-24 hours with next steps and call options.";
 const thankYouKeywords = [
   "thank you page",
   "contact form confirmation",

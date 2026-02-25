@@ -3,9 +3,9 @@ import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const privacyTitle = "Privacy Policy";
+const privacyTitle = "Privacy Policy for Website and Lead Data";
 const privacyDescription =
-  "Review how AlgoAura collects, uses, and protects information submitted through our website and lead generation systems.";
+  "Read how AlgoAura collects, stores, and protects contact and business data submitted through our website forms, consultations, and automation workflows.";
 const privacyKeywords = [
   "privacy policy",
   "data protection policy",
