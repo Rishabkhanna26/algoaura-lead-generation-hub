@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import Portfolio from "../../components/Portfolio";
 import ProjectShowcase from "../../components/ProjectShowcase";
@@ -46,6 +47,7 @@ export default function PortfolioPage() {
         <Portfolio />
         <ProjectShowcase />
         <Testimonials />
+        <LongFormContentSection pageKey="portfolio" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioSchema) }}

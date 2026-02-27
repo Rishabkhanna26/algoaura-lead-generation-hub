@@ -1,6 +1,7 @@
 import ContactForm from "../../components/ContactForm";
 import FaqAccordion from "../../components/FaqAccordion";
 import Footer from "../../components/Footer";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import LocationSection from "../../components/LocationSection";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
@@ -106,6 +107,7 @@ export default function ContactPage() {
           subtitle="Quick answers before you book your strategy call."
           items={contactFaqItems}
         />
+        <LongFormContentSection pageKey="contact" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}

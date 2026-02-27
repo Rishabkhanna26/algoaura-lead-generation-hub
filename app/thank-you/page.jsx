@@ -7,6 +7,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import Footer from "../../components/Footer";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import WhatsAppLogo from "../../components/WhatsAppLogo";
@@ -185,6 +186,8 @@ export default async function ThankYouPage({ searchParams }) {
               </div>
             </div>
           </section>
+
+          <LongFormContentSection pageKey="thank-you" />
 
           <div className="text-center">
             <a

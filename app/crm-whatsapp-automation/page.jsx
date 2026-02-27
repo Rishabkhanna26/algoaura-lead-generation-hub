@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import FaqAccordion from "../../components/FaqAccordion";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
@@ -133,6 +134,7 @@ export default function CrmWhatsappAutomationPage() {
           subtitle="Key implementation details before you start your automation project."
           items={automationFaqItems}
         />
+        <LongFormContentSection pageKey="crm-whatsapp-automation" />
 
         <section className="section-padding pt-0">
           <div className="container-narrow">

@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import Testimonials from "../../components/Testimonials";
 import VisualEffects from "../../components/VisualEffects";
@@ -38,6 +39,7 @@ export default function ClientResultsPage() {
       <main className="pt-32 md:pt-36">
         <h1 className="sr-only">AlgoAura Client Results and Testimonials</h1>
         <Testimonials />
+        <LongFormContentSection pageKey="client-results" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(resultsSchema) }}

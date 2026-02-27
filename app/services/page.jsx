@@ -1,6 +1,7 @@
 import Footer from "../../components/Footer";
 import FaqAccordion from "../../components/FaqAccordion";
 import IntegrationMatrix from "../../components/IntegrationMatrix";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import Services from "../../components/Services";
 import VisualEffects from "../../components/VisualEffects";
@@ -193,6 +194,7 @@ export default function ServicesPage() {
           subtitle="Everything clients ask before selecting a website and automation execution partner."
           items={serviceFaqItems}
         />
+        <LongFormContentSection pageKey="services" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}

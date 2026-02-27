@@ -5,6 +5,7 @@ import FaqAccordion from "../components/FaqAccordion";
 import GrowthEstimator from "../components/GrowthEstimator";
 import IntegrationMatrix from "../components/IntegrationMatrix";
 import LocationSection from "../components/LocationSection";
+import LongFormContentSection from "../components/LongFormContentSection";
 import Portfolio from "../components/Portfolio";
 import ProblemSection from "../components/ProblemSection";
 import Services from "../components/Services";
@@ -133,6 +134,10 @@ export default function HomePage() {
         <div className="cv-auto">
           <SectionSeparator label="Location" />
           <LocationSection />
+        </div>
+        <div className="cv-auto">
+          <SectionSeparator label="Insights" />
+          <LongFormContentSection pageKey="home" />
         </div>
         <div className="cv-auto">
           <SectionSeparator label="Get Started" />

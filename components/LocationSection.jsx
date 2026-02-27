@@ -1,6 +1,7 @@
 import { Building2, CalendarClock, MapPinned, Navigation } from "lucide-react";
 
 const officeMapUrl = "https://maps.app.goo.gl/AW5grbVnSfvEQB3f9";
+const officeMapEmbedUrl = "https://www.google.com/maps?q=31.3094626,75.5490065&z=15&output=embed";
 
 export default function LocationSection({ compact = false }) {
   return (
@@ -44,6 +45,24 @@ export default function LocationSection({ compact = false }) {
                 Open in Google Maps
               </a>
             </div>
+          </div>
+
+          <div className="mt-6 glass-card rounded-xl overflow-hidden border border-primary/20">
+            <div className="px-4 py-3 border-b border-border/60">
+              <p className="terminal-text text-[10px] text-primary uppercase tracking-wide">
+                Live Office Map
+              </p>
+            </div>
+            <iframe
+              title="AlgoAura Office Location Map"
+              src={officeMapEmbedUrl}
+              width="100%"
+              height="360"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
         </div>
       </div>

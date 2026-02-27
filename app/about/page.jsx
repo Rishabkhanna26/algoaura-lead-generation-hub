@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
@@ -154,6 +155,7 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <LongFormContentSection pageKey="about" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}

@@ -1,5 +1,6 @@
 import { BadgeCheck, CircleHelp, PhoneCall } from "lucide-react";
 import ContactForm from "../../components/ContactForm";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
@@ -198,6 +199,7 @@ export default function GrowthSystemPage() {
             </div>
           </div>
         </section>
+        <LongFormContentSection pageKey="growth-system" />
 
         <script
           type="application/ld+json"

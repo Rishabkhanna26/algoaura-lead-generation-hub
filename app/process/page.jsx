@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import Process from "../../components/Process";
 import VisualEffects from "../../components/VisualEffects";
@@ -38,6 +39,7 @@ export default function ProcessPage() {
       <main className="pt-32 md:pt-36">
         <h1 className="sr-only">AlgoAura Delivery Process</h1>
         <Process />
+        <LongFormContentSection pageKey="process" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(processSchema) }}

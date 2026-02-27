@@ -18,53 +18,47 @@ export default function Navbar({ hideLinks = false }) {
   const [open, setOpen] = useState(false);
   const [theme, setTheme] = useState("dark");
   const pathname = usePathname();
-  const scrollRafRef = useRef(null);
   const lastScrollYRef = useRef(0);
 
   useEffect(() => {
-    const syncFromScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 20);
-      setNavVisible(true);
-      lastScrollYRef.current = y;
-    };
+    setOpen(false);
+    setNavVisible(true);
 
-    syncFromScroll();
+    const y = window.scrollY;
+    setScrolled(y > 20);
+    lastScrollYRef.current = y;
   }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => {
-      if (scrollRafRef.current) return;
+      const currentY = window.scrollY;
+      const nextScrolled = currentY > 20;
+      setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
 
-      scrollRafRef.current = window.requestAnimationFrame(() => {
-        scrollRafRef.current = null;
-        const currentY = window.scrollY;
-        const nextScrolled = currentY > 20;
-        setScrolled((prev) => (prev === nextScrolled ? prev : nextScrolled));
-
-        if (open) {
-          setNavVisible((prev) => (prev ? prev : true));
-          lastScrollYRef.current = currentY;
-          return;
-        }
-
-        if (currentY <= 10) {
-          setNavVisible(true);
-          lastScrollYRef.current = currentY;
-          return;
-        }
-
-        const previousY = lastScrollYRef.current;
-        if (currentY < previousY) {
-          // Show navbar immediately on any upward scroll for consistent access.
-          setNavVisible((prev) => (prev ? prev : true));
-        } else if (currentY > previousY && currentY > 96) {
-          // Hide navbar only after moving below the first fold.
-          setNavVisible((prev) => (prev ? false : prev));
-        }
-
+      if (open) {
+        setNavVisible(true);
         lastScrollYRef.current = currentY;
-      });
+        return;
+      }
+
+      if (currentY <= 96) {
+        setNavVisible(true);
+        lastScrollYRef.current = currentY;
+        return;
+      }
+
+      const previousY = lastScrollYRef.current;
+      const deltaY = currentY - previousY;
+
+      if (deltaY <= -4) {
+        // Show navbar on meaningful upward scroll.
+        setNavVisible(true);
+      } else if (deltaY >= 4) {
+        // Hide navbar on meaningful downward scroll.
+        setNavVisible(false);
+      }
+
+      lastScrollYRef.current = currentY;
     };
 
     lastScrollYRef.current = window.scrollY;
@@ -72,9 +66,6 @@ export default function Navbar({ hideLinks = false }) {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
-      if (scrollRafRef.current) {
-        window.cancelAnimationFrame(scrollRafRef.current);
-      }
     };
   }, [open, pathname]);
 
@@ -83,10 +74,6 @@ export default function Navbar({ hideLinks = false }) {
       setNavVisible(true);
     }
   }, [open]);
-
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("theme");
@@ -109,7 +96,7 @@ export default function Navbar({ hideLinks = false }) {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-transform transition-colors duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[70] transition-transform transition-colors duration-300 ${
         navVisible ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
       } ${
         scrolled ? "glass-card border-b border-white/5" : "bg-transparent"

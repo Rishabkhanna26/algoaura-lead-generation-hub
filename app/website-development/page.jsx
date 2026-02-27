@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import FaqAccordion from "../../components/FaqAccordion";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
@@ -137,6 +138,7 @@ export default function WebsiteDevelopmentPage() {
           subtitle="Important points to know before starting your website project."
           items={websiteFaqItems}
         />
+        <LongFormContentSection pageKey="website-development" />
 
         <section className="section-padding pt-0">
           <div className="container-narrow">

@@ -1,5 +1,6 @@
 import ContactForm from "../../components/ContactForm";
 import Footer from "../../components/Footer";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
@@ -45,6 +46,7 @@ export default function AccessPage() {
           }
           description="Share your business details and we will contact you with the right growth automation plan."
         />
+        <LongFormContentSection pageKey="access" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(accessSchema) }}

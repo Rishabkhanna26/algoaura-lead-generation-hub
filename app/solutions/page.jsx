@@ -1,4 +1,5 @@
 import Footer from "../../components/Footer";
+import LongFormContentSection from "../../components/LongFormContentSection";
 import Navbar from "../../components/Navbar";
 import Services from "../../components/Services";
 import VisualEffects from "../../components/VisualEffects";
@@ -42,6 +43,7 @@ export default function SolutionsPage() {
       <main className="pt-32 md:pt-36">
         <h1 className="sr-only">AlgoAura Business Solutions</h1>
         <Services />
+        <LongFormContentSection pageKey="solutions" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(solutionsSchema) }}
