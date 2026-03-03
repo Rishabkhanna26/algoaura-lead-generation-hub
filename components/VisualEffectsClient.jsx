@@ -2,12 +2,49 @@
 
 import { useEffect, useState } from "react";
 
+let hasBootstrappedEffects = false;
+let cachedGridBackgroundComponent = null;
+let cachedCursorGlowComponent = null;
+let effectImportPromise = null;
+
+const loadEffectComponents = () => {
+  if (cachedGridBackgroundComponent && cachedCursorGlowComponent) {
+    return Promise.resolve({
+      grid: cachedGridBackgroundComponent,
+      glow: cachedCursorGlowComponent,
+    });
+  }
+
+  if (!effectImportPromise) {
+    effectImportPromise = Promise.all([import("./GridBackground"), import("./CursorGlow")]).then(
+      ([gridModule, glowModule]) => {
+        cachedGridBackgroundComponent = gridModule.default;
+        cachedCursorGlowComponent = glowModule.default;
+        hasBootstrappedEffects = true;
+        return {
+          grid: cachedGridBackgroundComponent,
+          glow: cachedCursorGlowComponent,
+        };
+      },
+    );
+  }
+
+  return effectImportPromise;
+};
+
 export default function VisualEffectsClient() {
-  const [enabled, setEnabled] = useState(false);
-  const [GridBackgroundComponent, setGridBackgroundComponent] = useState(null);
-  const [CursorGlowComponent, setCursorGlowComponent] = useState(null);
+  const [enabled, setEnabled] = useState(() => hasBootstrappedEffects);
+  const [GridBackgroundComponent, setGridBackgroundComponent] = useState(
+    () => cachedGridBackgroundComponent,
+  );
+  const [CursorGlowComponent, setCursorGlowComponent] = useState(() => cachedCursorGlowComponent);
 
   useEffect(() => {
+    if (hasBootstrappedEffects) {
+      setEnabled(true);
+      return;
+    }
+
     let timeoutId;
     let idleId;
 
@@ -32,15 +69,19 @@ export default function VisualEffectsClient() {
   useEffect(() => {
     if (!enabled) return;
 
+    if (cachedGridBackgroundComponent && cachedCursorGlowComponent) {
+      setGridBackgroundComponent(() => cachedGridBackgroundComponent);
+      setCursorGlowComponent(() => cachedCursorGlowComponent);
+      return;
+    }
+
     let isCancelled = false;
 
-    Promise.all([import("./GridBackground"), import("./CursorGlow")]).then(
-      ([gridModule, glowModule]) => {
-        if (isCancelled) return;
-        setGridBackgroundComponent(() => gridModule.default);
-        setCursorGlowComponent(() => glowModule.default);
-      },
-    );
+    loadEffectComponents().then(({ grid, glow }) => {
+      if (isCancelled) return;
+      setGridBackgroundComponent(() => grid);
+      setCursorGlowComponent(() => glow);
+    });
 
     return () => {
       isCancelled = true;

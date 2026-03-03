@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 const ICON_TYPES = [
   "browser",
@@ -178,6 +179,7 @@ function drawIconGlyph(ctx, type, size, palette, phase) {
 
 export default function GridBackground() {
   const canvasRef = useRef(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -196,7 +198,8 @@ export default function GridBackground() {
     let isActive = true;
     let isLightTheme = document.documentElement.classList.contains("light");
     let heroMaskHeight = 0;
-    let currentPathname = window.location.pathname;
+    let heroMaskDirty = true;
+    let heroElement = null;
     let pointerTarget = { x: 0, y: 0 };
     let pointerCurrent = { x: 0, y: 0 };
     const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
@@ -253,20 +256,26 @@ export default function GridBackground() {
             iconAccent: "rgba(120, 220, 255, 0.96)",
           };
 
-    const updateHeroMask = () => {
-      if (currentPathname !== "/") {
+    const refreshHeroMask = () => {
+      if (pathname !== "/") {
         heroMaskHeight = 0;
+        heroElement = null;
+        heroMaskDirty = false;
         return;
       }
 
-      const heroElement = document.getElementById("home-hero");
+      if (!heroElement || !document.body.contains(heroElement)) {
+        heroElement = document.getElementById("home-hero");
+      }
       if (!heroElement) {
         heroMaskHeight = 0;
+        heroMaskDirty = true;
         return;
       }
 
       const rect = heroElement.getBoundingClientRect();
       heroMaskHeight = Math.max(0, Math.min(window.innerHeight, rect.bottom));
+      heroMaskDirty = false;
     };
 
     const resize = () => {
@@ -275,7 +284,8 @@ export default function GridBackground() {
       canvas.height = window.innerHeight * dpr;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.scale(dpr, dpr);
-      updateHeroMask();
+      heroMaskDirty = true;
+      refreshHeroMask();
     };
 
     const buildBlobs = () => {
@@ -298,7 +308,7 @@ export default function GridBackground() {
 
     const buildIconNodes = () => {
       const count = isMobileViewport() ? (isLightTheme ? 6 : 5) : isLightTheme ? 11 : 9;
-      const minY = currentPathname === "/" ? Math.max(0, heroMaskHeight + 40) : 36;
+      const minY = 36;
       const usableHeight = Math.max(120, window.innerHeight - minY - 30);
 
       return Array.from({ length: count }, (_, index) => ({
@@ -362,12 +372,7 @@ export default function GridBackground() {
       if (prefersReducedMotion || !isActive || document.hidden) return;
       if (timestamp - lastFrameTime < getFrameInterval()) return;
       lastFrameTime = timestamp;
-
-      const nextPathname = window.location.pathname;
-      if (nextPathname !== currentPathname) {
-        currentPathname = nextPathname;
-        init();
-      }
+      if (heroMaskDirty) refreshHeroMask();
 
       const width = window.innerWidth;
       const height = window.innerHeight;
@@ -517,7 +522,10 @@ export default function GridBackground() {
 
     const handleVisibility = () => {
       isActive = !document.hidden;
-      if (isActive) init();
+      if (isActive) {
+        heroMaskDirty = true;
+        init();
+      }
     };
 
     const handlePointerMove = (event) => {
@@ -535,7 +543,7 @@ export default function GridBackground() {
     };
 
     const handleScroll = () => {
-      updateHeroMask();
+      heroMaskDirty = true;
     };
 
     const handleResize = () => {
@@ -548,19 +556,19 @@ export default function GridBackground() {
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
     window.addEventListener("pointerleave", handlePointerLeave, { passive: true });
     window.addEventListener("blur", handlePointerLeave);
-    window.addEventListener("visibilitychange", handleVisibility);
+    document.addEventListener("visibilitychange", handleVisibility);
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("pointermove", handlePointerMove);
       window.removeEventListener("pointerleave", handlePointerLeave);
       window.removeEventListener("blur", handlePointerLeave);
-      window.removeEventListener("visibilitychange", handleVisibility);
+      document.removeEventListener("visibilitychange", handleVisibility);
       themeObserver?.disconnect();
       if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
       cancelAnimationFrame(animId);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <canvas
