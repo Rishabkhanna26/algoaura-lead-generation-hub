@@ -5,6 +5,7 @@ const theme = {
     primary: "hsl(25 100% 50%)",
     secondary: "hsl(210 40% 14%)",
     muted: "hsl(210 35% 16%)",
+    accentSecondary: "hsl(210 15% 45%)",
     success: "hsl(142 70% 45%)",
     destructive: "hsl(0 84% 60%)",
   },

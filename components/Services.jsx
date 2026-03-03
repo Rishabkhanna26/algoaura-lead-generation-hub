@@ -60,7 +60,7 @@ export default function Services() {
                   <service.icon className="text-primary" size={24} />
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="terminal-text text-[10px] text-muted-foreground">#{service.version}</span>
+                  <span className="terminal-text text-[10px] text-accent-secondary">#{service.version}</span>
                   <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-success/15 text-success">
                     {service.status}
                   </span>
@@ -68,13 +68,13 @@ export default function Services() {
               </div>
 
               <h3 className="font-heading font-semibold text-lg">{service.title}</h3>
-              <p className="text-muted-foreground text-base mt-2">{service.desc}</p>
+              <p className="text-accent-secondary text-base mt-2">{service.desc}</p>
 
-              <div className="mt-4 pt-3 border-t border-border/50">
+              <div className="mt-4 pt-3 border-t border-accent-secondary/20">
                 <div className="flex items-center justify-between gap-2">
                   <span className="flex items-center gap-2">
                     <div className="status-dot status-dot-online" />
-                    <span className="terminal-text text-[10px] text-muted-foreground">
+                    <span className="terminal-text text-[10px] text-accent-secondary">
                       Service Included
                     </span>
                   </span>

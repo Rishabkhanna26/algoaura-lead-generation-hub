@@ -47,7 +47,7 @@ export default function WhoThisIsFor() {
                 <item.icon className="text-primary" size={22} />
               </div>
               <h3 className="font-heading font-semibold text-lg">{item.title}</h3>
-              <p className="text-muted-foreground text-base mt-2">{item.description}</p>
+              <p className="text-accent-secondary text-base mt-2">{item.description}</p>
             </div>
           ))}
         </div>

@@ -3,10 +3,10 @@
 import { memo, useEffect, useState } from "react";
 
 const heroTypedLines = [
-  "for Growing Businesses",
-  "with CRM + WhatsApp Automation",
-  "with Booking and Lead Tracking",
-  "that Convert Visitors into Leads",
+  "For Growing Businesses",
+  "With CRM + WhatsApp Automation",
+  "With Booking and Lead Tracking",
+  "That Convert Visitors into Leads",
 ];
 
 const longestHeroTypedLine = heroTypedLines.reduce(

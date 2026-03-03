@@ -36,7 +36,7 @@ export default function ContactForm({
             >
               <div className="system-card p-6 rounded-2xl">
                 <h3 className="font-heading font-semibold text-lg mb-2">Chat on WhatsApp</h3>
-                <p className="text-muted-foreground text-base mb-4 terminal-text">
+                <p className="text-accent-secondary text-base mb-4 terminal-text">
                   Want a faster reply? Message us directly and we will help you immediately.
                 </p>
                 <a
@@ -50,7 +50,7 @@ export default function ContactForm({
               </div>
               <div className="system-card p-6 rounded-2xl">
                 <h3 className="font-heading font-semibold text-lg mb-2">Book Free Consultation</h3>
-                <p className="text-muted-foreground text-base terminal-text mb-4">
+                <p className="text-accent-secondary text-base terminal-text mb-4">
                   Prefer a direct call? Book a strategy session and we will map your next steps.
                 </p>
                 <a

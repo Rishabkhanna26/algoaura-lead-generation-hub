@@ -14,7 +14,7 @@ export default function CTA() {
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4 text-balance">
               Ready to <span className="gradient-text">Automate</span> Your Business?
             </h2>
-            <p className="text-muted-foreground text-lg max-w-lg mx-auto mb-8 terminal-text">
+            <p className="text-accent-secondary text-lg max-w-lg mx-auto mb-8 terminal-text">
               Get a website and automation system that helps you capture, track, and close more leads.
             </p>
             <a

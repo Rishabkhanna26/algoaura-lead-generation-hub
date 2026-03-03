@@ -6,11 +6,14 @@ import WhatsAppLogo from "./WhatsAppLogo";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden">
+    <section
+      id="home-hero"
+      className="relative min-h-[100svh] flex items-center justify-center overflow-x-hidden"
+    >
       <HeroWorldMap />
-      <div className="absolute inset-0 grid-bg opacity-30 z-0" />
+      <div className="absolute inset-0 grid-bg hero-grid-overlay opacity-30 z-0" />
       <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/35 to-background/80 pointer-events-none z-[2]" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-primary/12 blur-[140px] pointer-events-none z-[2]" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[140px] pointer-events-none z-[2] hero-ambient-glow" />
 
       <div className="relative z-10 container-narrow text-center px-4 pt-28 md:pt-32 pb-8 md:pb-12">
         <HeroTerminalBoot />
@@ -24,7 +27,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-balance animate-fade-up"
+          className="text-lg md:text-xl text-accent-secondary max-w-2xl mx-auto mb-10 text-balance animate-fade-up"
           style={{ animationDelay: "0.32s" }}
         >
           We build modern websites integrated with CRM, WhatsApp & lead automation systems.
@@ -62,7 +65,7 @@ export default function Hero() {
           ].map((stat) => (
             <div key={stat.label}>
               <p className="text-2xl md:text-3xl font-heading font-bold gradient-text">{stat.value}</p>
-              <p className="text-xs md:text-sm text-muted-foreground mt-1">{stat.label}</p>
+              <p className="text-xs md:text-sm text-accent-secondary mt-1">{stat.label}</p>
             </div>
           ))}
         </div>

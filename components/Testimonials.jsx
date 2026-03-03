@@ -52,8 +52,8 @@ export default function Testimonials() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="terminal-text text-[10px] text-primary/60">[{testimonial.id}]</span>
-                <span className="terminal-text text-[10px] text-muted-foreground/50">
+                <span className="terminal-text text-[10px] text-accent-secondary/70">[{testimonial.id}]</span>
+                <span className="terminal-text text-[10px] text-accent-secondary/50">
                   {testimonial.timestamp}
                 </span>
               </div>
@@ -62,13 +62,13 @@ export default function Testimonials() {
                 &quot;{testimonial.text}&quot;
               </p>
 
-              <div className="flex items-center gap-2 border-t border-border/50 pt-3">
+              <div className="flex items-center gap-2 border-t border-accent-secondary/20 pt-3">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-xs font-bold text-primary">{testimonial.name[0]}</span>
                 </div>
                 <div>
                   <p className="font-heading font-semibold text-xs">{testimonial.name}</p>
-                  <p className="text-muted-foreground text-[10px] terminal-text">{testimonial.role}</p>
+                  <p className="text-accent-secondary text-[10px] terminal-text">{testimonial.role}</p>
                 </div>
               </div>
             </div>

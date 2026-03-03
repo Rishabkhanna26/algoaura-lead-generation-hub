@@ -18,7 +18,7 @@ export default function FaqAccordion({
             <CircleHelp size={16} /> FAQ
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3 text-balance">{title}</h2>
-          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">{subtitle}</p>
+          <p className="text-accent-secondary mt-4 max-w-2xl mx-auto">{subtitle}</p>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-4">
@@ -43,7 +43,7 @@ export default function FaqAccordion({
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="px-5 md:px-6 pb-5 md:pb-6 text-muted-foreground">{item.answer}</p>
+                    <p className="px-5 md:px-6 pb-5 md:pb-6 text-accent-secondary">{item.answer}</p>
                   </div>
                 </div>
               </div>

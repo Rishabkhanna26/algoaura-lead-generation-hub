@@ -81,7 +81,7 @@ export default function Portfolio() {
             >
               <div className="flex items-center justify-between mb-5">
                 <div>
-                  <span className="terminal-text text-[10px] text-muted-foreground uppercase">
+                  <span className="terminal-text text-[10px] text-accent-secondary uppercase">
                     Client Case
                   </span>
                   <h3 className="font-heading font-semibold text-lg">{study.client}</h3>
@@ -92,16 +92,16 @@ export default function Portfolio() {
               </div>
 
               <div className="space-y-3 text-sm">
-                <p className="text-muted-foreground">
+                <p className="text-accent-secondary">
                   <span className="text-foreground font-semibold">Problem:</span> {study.problem}
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-accent-secondary">
                   <span className="text-foreground font-semibold">What we built:</span> {study.built}
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-accent-secondary">
                   <span className="text-foreground font-semibold">Tech used:</span> {study.tech}
                 </p>
-                <p className="text-muted-foreground">
+                <p className="text-accent-secondary">
                   <span className="text-foreground font-semibold">Result:</span> {study.result}
                 </p>
               </div>

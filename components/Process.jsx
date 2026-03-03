@@ -35,7 +35,7 @@ export default function Process() {
         </div>
 
         <div className="relative">
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent -translate-y-1/2" />
+          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-secondary/30 to-transparent -translate-y-1/2" />
 
           <div className="grid md:grid-cols-3 gap-8 relative z-10">
             {phases.map((phase, index) => (
@@ -53,7 +53,7 @@ export default function Process() {
                     <phase.icon className="text-primary" size={28} />
                   </div>
                   <h3 className="font-heading font-semibold text-lg mb-2">{phase.title}</h3>
-                  <p className="text-muted-foreground text-base">{phase.desc}</p>
+                  <p className="text-accent-secondary text-base">{phase.desc}</p>
                 </div>
 
                 {index < 2 && (

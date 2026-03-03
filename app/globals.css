@@ -25,6 +25,9 @@
     --accent: 25 100% 50%;
     --accent-foreground: 0 0% 100%;
 
+    --accent-secondary: 210 15% 45%;
+    --accent-secondary-foreground: 210 20% 92%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
@@ -75,6 +78,9 @@
 
     --accent: 210 61% 11%;
     --accent-foreground: 0 0% 100%;
+
+    --accent-secondary: 210 12% 55%;
+    --accent-secondary-foreground: 215 28% 22%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -128,6 +134,14 @@
     overflow-x: hidden;
     line-height: 1.6;
     transition: background-color 250ms ease, color 250ms ease;
+  }
+
+  .light body {
+    background-color: hsl(var(--background));
+    background-image:
+      radial-gradient(circle at 14% -4%, rgba(148, 163, 184, 0.24), transparent 36%),
+      radial-gradient(circle at 86% 0%, rgba(203, 213, 225, 0.38), transparent 42%),
+      linear-gradient(180deg, rgba(249, 251, 255, 0.92) 0%, rgba(238, 242, 248, 0.95) 48%, rgba(231, 237, 245, 0.98) 100%);
   }
 
   h1,
@@ -208,6 +222,18 @@
     transform: translateY(-4px);
   }
 
+  .divider-secondary {
+    @apply border-accent-secondary/20;
+  }
+
+  .text-subtle {
+    @apply text-accent-secondary;
+  }
+
+  .icon-subtle {
+    @apply text-accent-secondary/60;
+  }
+
   .status-dot {
     @apply w-2 h-2 rounded-full;
     animation: status-pulse 2s ease-in-out infinite;
@@ -268,8 +294,24 @@
 
 .light .grid-bg {
   background-image:
-    linear-gradient(rgba(11, 28, 45, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 28, 45, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(100, 116, 139, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 116, 139, 0.13) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(148, 163, 184, 0.16), transparent 36%),
+    radial-gradient(circle at 82% -4%, rgba(148, 163, 184, 0.1), transparent 40%);
+  background-size: 64px 64px, 64px 64px, auto, auto;
+  animation: none;
+}
+
+.hero-ambient-glow {
+  background: hsl(25 100% 50% / 0.12);
+}
+
+.light .hero-ambient-glow {
+  background: radial-gradient(circle, rgba(120, 136, 156, 0.24) 0%, rgba(148, 163, 184, 0.16) 40%, transparent 74%);
+}
+
+.light .hero-grid-overlay {
+  opacity: 0.48;
 }
 
 @keyframes grid-move {

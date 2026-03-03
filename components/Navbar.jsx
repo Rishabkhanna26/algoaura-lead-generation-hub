@@ -102,7 +102,7 @@ export default function Navbar({ hideLinks = false }) {
         scrolled ? "glass-card border-b border-white/5" : "bg-transparent"
       }`}
     >
-      <div className="container-narrow flex items-center justify-between h-28 md:h-32 px-4 md:px-6">
+      <div className="container-narrow flex items-center justify-between h-28 md:h-32 px-4 md:px-8">
         <Link href="/" className="inline-flex items-center">
           <img
             src="/algoaura_logo-320.webp"
@@ -133,7 +133,7 @@ export default function Navbar({ hideLinks = false }) {
                 className={`text-sm transition-colors terminal-text ${
                   pathname === link.href
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-accent-secondary hover:text-foreground"
                 }`}
               >
                 {link.label}
@@ -171,7 +171,7 @@ export default function Navbar({ hideLinks = false }) {
       </div>
 
       {!hideLinks && open && (
-        <div className="md:hidden glass-card border-t border-white/5 mx-2 mb-2 rounded-xl px-4 pb-6 pt-3 animate-fade-up">
+        <div className="md:hidden glass-card border-t border-white/5 mx-4 mb-2 rounded-xl px-4 pb-6 pt-3 animate-fade-up">
           <button
             type="button"
             onClick={toggleTheme}
@@ -188,7 +188,7 @@ export default function Navbar({ hideLinks = false }) {
               className={`block py-3 transition-colors terminal-text ${
                 pathname === link.href
                   ? "text-primary"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-accent-secondary hover:text-foreground"
               }`}
             >
               {link.label}

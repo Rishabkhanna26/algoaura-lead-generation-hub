@@ -12,6 +12,7 @@ import Services from "../components/Services";
 import SolutionSection from "../components/SolutionSection";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
+import HoliOfferSection from "../components/HoliOfferSection";
 import Navbar from "../components/Navbar";
 import SectionSeparator from "../components/SectionSeparator";
 import Testimonials from "../components/Testimonials";
@@ -87,6 +88,10 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <div className="cv-auto">
+          <SectionSeparator label="Holi Offer" />
+          <HoliOfferSection />
+        </div>
         <div className="cv-auto">
           <SectionSeparator label="Problem" />
           <ProblemSection />

@@ -28,22 +28,22 @@ export default function Footer() {
             <h4 className="font-heading font-semibold mb-3 terminal-text text-base">
               Services
             </h4>
-            <ul className="space-y-2 text-base text-muted-foreground">
+            <ul className="space-y-2 text-base text-accent-secondary">
               <li className="flex items-center gap-2">
-                <Globe size={14} className="text-primary/50" /> Website Development
+                <Globe size={14} className="text-accent-secondary/60" /> Website Development
               </li>
               <li className="flex items-center gap-2">
-                <Cog size={14} className="text-primary/50" /> CRM Integration
+                <Cog size={14} className="text-accent-secondary/60" /> CRM Integration
               </li>
               <li className="flex items-center gap-2">
-                <Target size={14} className="text-primary/50" /> Lead and WhatsApp Automation
+                <Target size={14} className="text-accent-secondary/60" /> Lead and WhatsApp Automation
               </li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-heading font-semibold mb-3 terminal-text text-base">Navigation</h4>
-            <ul className="space-y-2 text-base text-muted-foreground">
+            <ul className="space-y-2 text-base text-accent-secondary">
               <li>
                 <a href="/about" className="hover:text-foreground transition-colors">
                   About
@@ -104,12 +104,12 @@ export default function Footer() {
 
           <div>
             <h4 className="font-heading font-semibold mb-3 terminal-text text-base">Connect</h4>
-            <ul className="space-y-2 text-base text-muted-foreground">
+            <ul className="space-y-2 text-base text-accent-secondary">
               <li className="flex items-center gap-2">
-                <Mail size={14} className="text-primary/50" /> teamalgoaura@gmail.com
+                <Mail size={14} className="text-accent-secondary/60" /> teamalgoaura@gmail.com
               </li>
               <li className="flex items-center gap-2">
-                <MapPin size={14} className="text-primary/50" />
+                <MapPin size={14} className="text-accent-secondary/60" />
                 <a
                   href="https://maps.app.goo.gl/AW5grbVnSfvEQB3f9"
                   target="_blank"
@@ -123,15 +123,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-muted-foreground terminal-text">
+        <div className="border-t border-accent-secondary/20 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-accent-secondary terminal-text">
             {`(c) ${new Date().getFullYear()} AlgoAura. All rights reserved.`}
           </p>
           <div className="flex gap-4">
-            <a href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors text-xs">
+            <a href="/privacy" className="text-accent-secondary hover:text-foreground transition-colors text-xs">
               Privacy
             </a>
-            <a href="/terms" className="text-muted-foreground hover:text-foreground transition-colors text-xs">
+            <a href="/terms" className="text-accent-secondary hover:text-foreground transition-colors text-xs">
               Terms
             </a>
           </div>
