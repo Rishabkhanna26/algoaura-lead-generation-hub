@@ -1,4 +1,4 @@
-import { Cog, GitBranch, Globe, Target } from "lucide-react";
+import { Cog, GitBranch, Globe, Megaphone, Share2, Target } from "lucide-react";
 
 const serviceItems = [
   {
@@ -26,10 +26,26 @@ const serviceItems = [
     href: "/crm-whatsapp-automation",
   },
   {
+    icon: Share2,
+    title: "Facebook and Instagram Automation",
+    desc: "Automated social inbox replies, lead handoffs, and nurture flows for Facebook and Instagram.",
+    version: "04",
+    status: "ACTIVE",
+    href: "/crm-whatsapp-automation",
+  },
+  {
+    icon: Megaphone,
+    title: "Meta Ads Campaign Management",
+    desc: "Campaign setup, creative direction, lead-form flows, and ad-to-CRM tracking for better ROI.",
+    version: "05",
+    status: "ACTIVE",
+    href: "/services",
+  },
+  {
     icon: GitBranch,
     title: "Booking and Sales Funnel Setup",
     desc: "Calendly, landing pages, and conversion flows connected into one simple system.",
-    version: "04",
+    version: "06",
     status: "ACTIVE",
     href: "/contact",
   },
@@ -46,6 +62,10 @@ export default function Services() {
           <h2 className="text-4xl md:text-5xl font-heading font-bold mt-3">
             What We <span className="gradient-text">Build</span>
           </h2>
+          <p className="mt-4 max-w-3xl mx-auto text-muted-foreground text-base md:text-lg">
+            From websites and CRM to Meta ads plus Facebook and Instagram automation, we connect
+            acquisition and follow-up into one growth system.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">

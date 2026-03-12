@@ -3,7 +3,9 @@ import {
   Bot,
   CheckCircle2,
   Globe,
+  Megaphone,
   MessageSquare,
+  Share2,
   Target,
 } from "lucide-react";
 
@@ -11,6 +13,8 @@ const upgrades = [
   { icon: Globe, title: "High-performance websites (Next.js)", status: "LIVE" },
   { icon: Bot, title: "CRM integration (Zoho and more)", status: "CONNECTED" },
   { icon: MessageSquare, title: "WhatsApp automation", status: "ACTIVE" },
+  { icon: Share2, title: "Facebook + Instagram automation", status: "ACTIVE" },
+  { icon: Megaphone, title: "Meta ads and lead campaigns", status: "SCALING" },
   { icon: Target, title: "Booking automation (Calendly)", status: "ACTIVE" },
   { icon: BarChart3, title: "Lead tracking dashboard", status: "TRACKING" },
 ];
@@ -27,7 +31,8 @@ export default function SolutionSection() {
             We Build <span className="gradient-text">Growth Systems</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            We combine everything needed to turn your website into a predictable lead engine.
+            We combine acquisition, automation, and tracking to turn your website and social
+            channels into one predictable lead engine.
           </p>
         </div>
 

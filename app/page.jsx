@@ -12,7 +12,7 @@ import Services from "../components/Services";
 import SolutionSection from "../components/SolutionSection";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
-// import HoliOfferSection from "../components/HoliOfferSection";
+import HoliOfferSection from "../components/HoliOfferSection";
 import Navbar from "../components/Navbar";
 import SectionSeparator from "../components/SectionSeparator";
 import Testimonials from "../components/Testimonials";
@@ -20,11 +20,14 @@ import VisualEffects from "../components/VisualEffects";
 import WhoThisIsFor from "../components/WhoThisIsFor";
 import { buildPageMetadata, buildWebPageSchema } from "../lib/seo";
 
-const homeTitle = "Web Development and Automation for Growing Businesses";
+const homeTitle = "Web Development, Meta Ads, and Automation for Growing Businesses";
 const homeDescription =
-  "Need WordPress or Next.js web development plus AI-powered automation? We build SEO-ready websites with CRM, WhatsApp, and booking systems to capture and convert more leads.";
+  "Need WordPress or Next.js web development plus Meta ads and AI-powered automation? We build SEO-ready websites with CRM, WhatsApp, Facebook, Instagram, and booking systems to capture and convert more leads.";
 const homeKeywords = [
   "web development for businesses",
+  "meta ads management services",
+  "facebook automation service",
+  "instagram automation service",
   "smart automation agency",
   "crm integration services",
   "whatsapp lead automation",
@@ -40,6 +43,7 @@ const homeKeywords = [
   "booking automation setup",
   "high converting websites",
   "lead tracking dashboard",
+  "meta lead ads setup",
   "growth system for startups",
   "AlgoAura",
 ];
@@ -88,10 +92,10 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
-        {/* <div className="cv-auto">
-          <SectionSeparator label="Holi Offer" />
+        <div className="cv-auto">
+          <SectionSeparator label="Discount Offer" />
           <HoliOfferSection />
-        </div> */}
+        </div>
         <div className="cv-auto">
           <SectionSeparator label="Problem" />
           <ProblemSection />

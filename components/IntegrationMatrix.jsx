@@ -1,4 +1,12 @@
-import { CalendarDays, MessageSquare, MonitorSmartphone, Puzzle, Workflow } from "lucide-react";
+import {
+  CalendarDays,
+  Megaphone,
+  MessageSquare,
+  MonitorSmartphone,
+  Puzzle,
+  Share2,
+  Workflow,
+} from "lucide-react";
 
 const integrations = [
   {
@@ -15,6 +23,16 @@ const integrations = [
     icon: MessageSquare,
     title: "WhatsApp Automation Layer",
     description: "Instant replies, reminders, reactivation messages, and lead nurturing.",
+  },
+  {
+    icon: Share2,
+    title: "Facebook + Instagram Automation",
+    description: "Social inbox handling, lead reply flows, and automated follow-up across both platforms.",
+  },
+  {
+    icon: Megaphone,
+    title: "Meta Ads Layer",
+    description: "Campaign launch, lead form routing, source attribution, and ad-to-CRM sync.",
   },
   {
     icon: CalendarDays,
@@ -40,8 +58,8 @@ export default function IntegrationMatrix() {
             Everything Works as <span className="gradient-text">One System</span>
           </h2>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            We do not build isolated tools. We connect your website, CRM, WhatsApp, and booking
-            stack into one predictable growth process.
+            We do not build isolated tools. We connect your website, CRM, WhatsApp, Meta ads,
+            Facebook, Instagram, and booking stack into one predictable growth process.
           </p>
         </div>
 

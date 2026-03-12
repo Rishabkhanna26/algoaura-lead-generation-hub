@@ -9,11 +9,14 @@ import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 import { BadgeCheck } from "lucide-react";
 import Link from "next/link";
 
-const servicesTitle = "AI-Powered WhatsApp Automation and Web Development Services";
+const servicesTitle = "Meta Ads, Social Automation, and Web Development Services";
 const servicesDescription =
-  "Explore WordPress and Next.js website development, CRM integration, AI-powered WhatsApp automation, and booking funnel setup built to generate qualified leads.";
+  "Explore WordPress and Next.js website development, CRM integration, Meta ads management, Facebook and Instagram automation, AI-powered WhatsApp automation, and booking funnel setup built to generate qualified leads.";
 const servicesKeywords = [
   "website development service",
+  "meta ads service",
+  "facebook automation service",
+  "instagram automation service",
   "crm setup and integration",
   "whatsapp automation service",
   "ai powered whatsapp automation services",
@@ -52,6 +55,8 @@ export default function ServicesPage() {
   const automationPoints = [
     "Zoho CRM setup with organized lead pipelines.",
     "WhatsApp automation for instant follow-ups and reminders.",
+    "Facebook and Instagram automation for social lead conversations.",
+    "Meta ads campaign setup with lead routing and attribution.",
     "Calendly integration for frictionless booking.",
     "Lead routing and follow-up systems connected end-to-end.",
   ];
@@ -96,8 +101,8 @@ export default function ServicesPage() {
                 Websites + <span className="gradient-text">Automation Systems</span>
               </h2>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                We build complete growth systems that connect your website, CRM, WhatsApp, and
-                booking flow into one predictable lead pipeline.
+                We build complete growth systems that connect your website, CRM, WhatsApp, Meta
+                ads, Facebook, Instagram, and booking flow into one predictable lead pipeline.
               </p>
             </div>
           </div>
@@ -127,16 +132,16 @@ export default function ServicesPage() {
                 </Link>
               </article>
               <article className="system-card p-7 md:p-8">
-                <h3 className="text-2xl font-heading font-bold">CRM and WhatsApp Automation Guide</h3>
+                <h3 className="text-2xl font-heading font-bold">CRM, Social, and Automation Guide</h3>
                 <p className="text-muted-foreground mt-3">
-                  See how we build CRM pipelines, lead routing, automated follow-ups, and booking
-                  workflows that reduce manual effort.
+                  See how we build CRM pipelines, Meta ad flows, Facebook and Instagram automation,
+                  automated follow-ups, and booking workflows that reduce manual effort.
                 </p>
                 <Link
                   href="/crm-whatsapp-automation"
                   className="inline-flex mt-5 glass-card px-5 py-2.5 rounded-lg text-sm hover:border-primary/30 transition-colors"
                 >
-                  Explore CRM and Automation
+                  Explore CRM and Social Automation
                 </Link>
               </article>
             </div>
@@ -180,10 +185,10 @@ export default function ServicesPage() {
                 Complete <span className="gradient-text">Growth System</span>
               </h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                Your website captures interest, your CRM organizes every lead, WhatsApp and email
-                automations follow up instantly, and Calendly books calls automatically. Everything
-                stays connected so your team spends less time on manual tasks and more time closing
-                business.
+                Your website captures interest, your Meta ads bring in demand, your CRM organizes
+                every lead, WhatsApp plus Facebook and Instagram automations follow up instantly,
+                and Calendly books calls automatically. Everything stays connected so your team
+                spends less time on manual tasks and more time closing business.
               </p>
             </div>
           </div>

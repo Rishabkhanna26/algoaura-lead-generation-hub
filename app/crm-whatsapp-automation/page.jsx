@@ -5,12 +5,15 @@ import Navbar from "../../components/Navbar";
 import VisualEffects from "../../components/VisualEffects";
 import { buildPageMetadata, buildWebPageSchema } from "../../lib/seo";
 
-const automationTitle = "AI-Powered CRM and WhatsApp Automation Services in India";
+const automationTitle = "CRM, WhatsApp, Facebook, and Instagram Automation Services in India";
 const automationDescription =
-  "Automate your lead pipeline with CRM setup, AI-powered WhatsApp follow-ups, and booking workflows. Capture, track, and convert leads faster with less manual effort.";
+  "Automate your lead pipeline with CRM setup, AI-powered WhatsApp follow-ups, Facebook and Instagram automation, Meta ad lead routing, and booking workflows. Capture, track, and convert leads faster with less manual effort.";
 const automationKeywords = [
   "crm setup services",
   "whatsapp automation services",
+  "facebook automation services",
+  "instagram automation services",
+  "meta ads lead automation",
   "ai powered whatsapp automation",
   "ai whatsapp chatbot for business",
   "whatsapp automation agency india",
@@ -48,6 +51,11 @@ const automationFaqItems = [
       "Yes. We design message sequences with timing logic, branching, and context so follow-ups stay natural and useful.",
   },
   {
+    question: "Do you automate Facebook and Instagram lead handling too?",
+    answer:
+      "Yes. We can manage social inbox flows, route Facebook and Instagram leads into your CRM, and trigger the right follow-up sequence automatically.",
+  },
+  {
     question: "Do you integrate booking links and reminders too?",
     answer:
       "Yes. We connect booking systems like Calendly and trigger confirmations, reminders, and no-show reduction flows.",
@@ -68,11 +76,12 @@ export default function CrmWhatsappAutomationPage() {
         <section className="section-padding">
           <div className="container-narrow text-center">
             <h1 className="text-4xl md:text-6xl font-heading font-bold text-balance">
-              CRM + WhatsApp Automation for <span className="gradient-text">Faster Follow-Up</span>
+              CRM + Social Automation for <span className="gradient-text">Faster Follow-Up</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-5">
-              We connect your lead sources, CRM pipeline, WhatsApp messages, and booking links so
-              your team can focus on conversion instead of manual chasing.
+              We connect your lead sources, CRM pipeline, WhatsApp messages, Facebook and
+              Instagram conversations, Meta ad flows, and booking links so your team can focus on
+              conversion instead of manual chasing.
             </p>
           </div>
         </section>
@@ -85,7 +94,7 @@ export default function CrmWhatsappAutomationPage() {
               </h2>
               <ul className="space-y-3 text-muted-foreground">
                 <li>Lead pipeline setup with stage logic and owner assignment</li>
-                <li>Source tracking and form routing from all incoming channels</li>
+                <li>Source tracking and form routing from website, Meta ads, and social inboxes</li>
                 <li>Lead scoring and prioritization to focus on high-intent prospects</li>
                 <li>Task reminders and follow-up accountability across the sales flow</li>
               </ul>
@@ -93,10 +102,12 @@ export default function CrmWhatsappAutomationPage() {
 
             <article className="system-card p-7 md:p-8">
               <h2 className="text-2xl md:text-3xl font-heading font-bold mb-4">
-                WhatsApp and Booking Automation
+                WhatsApp, Facebook, Instagram, and Booking Automation
               </h2>
               <ul className="space-y-3 text-muted-foreground">
                 <li>Instant reply flows for new inquiries</li>
+                <li>Facebook and Instagram message automation for faster first response</li>
+                <li>Meta lead ad capture routed directly into CRM with the right source tags</li>
                 <li>Reminder and nurture sequences for cold or pending leads</li>
                 <li>Calendly integration with confirmation and reminder triggers</li>
                 <li>Reactivation campaigns for old unconverted opportunities</li>
@@ -113,9 +124,9 @@ export default function CrmWhatsappAutomationPage() {
               </h2>
               <div className="grid md:grid-cols-5 gap-4">
                 {[
-                  "Lead captured from website or ad",
+                  "Lead captured from website, Meta ad, or social inbox",
                   "Lead auto-synced to CRM with source tag",
-                  "WhatsApp follow-up starts instantly",
+                  "WhatsApp or Facebook/Instagram follow-up starts instantly",
                   "Booking link and reminders are triggered",
                   "Status updates feed reporting dashboard",
                 ].map((item, index) => (
@@ -130,7 +141,7 @@ export default function CrmWhatsappAutomationPage() {
         </section>
 
         <FaqAccordion
-          title="CRM and WhatsApp Automation FAQ"
+          title="CRM and Social Automation FAQ"
           subtitle="Key implementation details before you start your automation project."
           items={automationFaqItems}
         />

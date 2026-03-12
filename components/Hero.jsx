@@ -4,6 +4,12 @@ import HeroTypingHeadline from "./HeroTypingHeadline";
 import HeroWorldMap from "./HeroWorldMap";
 import WhatsAppLogo from "./WhatsAppLogo";
 
+const heroCapabilityPills = [
+  "Meta Ads Campaigns",
+  "Facebook Automation",
+  "Instagram Automation",
+];
+
 export default function Hero() {
   return (
     <section
@@ -30,8 +36,23 @@ export default function Hero() {
           className="text-lg md:text-xl text-accent-secondary max-w-2xl mx-auto mb-10 text-balance animate-fade-up"
           style={{ animationDelay: "0.32s" }}
         >
-          We build modern websites integrated with CRM, WhatsApp & lead automation systems.
+          We build modern websites integrated with CRM, WhatsApp, Meta Ads, and Facebook +
+          Instagram automation systems.
         </p>
+
+        <div
+          className="mb-8 flex flex-wrap items-center justify-center gap-3 animate-fade-up"
+          style={{ animationDelay: "0.38s" }}
+        >
+          {heroCapabilityPills.map((pill) => (
+            <span
+              key={pill}
+              className="rounded-full border border-primary/30 bg-card/65 px-4 py-2 text-xs md:text-sm font-semibold tracking-[0.16em] uppercase text-primary/90 backdrop-blur-xl shadow-card"
+            >
+              {pill}
+            </span>
+          ))}
+        </div>
 
         <div
           className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up"
@@ -44,7 +65,7 @@ export default function Hero() {
             Book Free Consultation <ArrowRight size={18} />
           </a>
           <a
-            href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20want%20to%20discuss%20a%20website%20and%20automation%20system."
+            href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20want%20to%20discuss%20Meta%20ads,%20Facebook%20Instagram%20automation,%20and%20a%20website%20growth%20system."
             target="_blank"
             rel="noopener noreferrer"
             className="glass-card px-8 py-3.5 rounded-xl text-base text-foreground hover:border-primary/30 transition-all flex items-center justify-center gap-2"

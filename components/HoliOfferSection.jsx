@@ -2,8 +2,9 @@ import {
   ArrowRight,
   Bot,
   CalendarClock,
-  Droplets,
+  Megaphone,
   MessageSquareText,
+  Share2,
   Sparkles,
   Workflow,
 } from "lucide-react";
@@ -11,56 +12,51 @@ import {
 const automationHighlights = [
   {
     icon: MessageSquareText,
-    title: "WhatsApp Smart Replies",
-    description: "Auto-reply to new leads in seconds with personalized first-touch messages.",
+    title: "Fast Lead Response",
+    description: "Auto-reply to new leads in seconds with first-touch messages tailored to your service.",
   },
   {
     icon: Workflow,
     title: "CRM + Pipeline Sync",
-    description: "Push every inquiry into your CRM and keep follow-up stages updated automatically.",
+    description: "Push inquiries into your CRM and keep follow-up stages updated without manual chasing.",
+  },
+  {
+    icon: Share2,
+    title: "Facebook + Instagram Automation",
+    description: "Capture and nurture leads from social inbox conversations without manual switching.",
+  },
+  {
+    icon: Megaphone,
+    title: "Meta Ads to CRM Tracking",
+    description: "Run Meta lead campaigns and route every form or message into the right pipeline.",
   },
   {
     icon: CalendarClock,
     title: "Follow-Up + Booking",
-    description: "Trigger reminders, nudge inactive leads, and auto-confirm appointment slots.",
+    description: "Trigger reminders, revive inactive leads, and confirm appointment slots automatically.",
   },
 ];
 
-const splashDots = [
-  { position: "top-4 left-[24%]", size: "w-3 h-3", color: "bg-[#ff6b6b]/80" },
-  { position: "top-16 left-[38%]", size: "w-2 h-2", color: "bg-[#ffd43b]/90" },
-  { position: "top-10 right-[26%]", size: "w-2.5 h-2.5", color: "bg-[#4dabf7]/85" },
-  { position: "top-24 right-[14%]", size: "w-3 h-3", color: "bg-[#69db7c]/80" },
-  { position: "bottom-16 left-[14%]", size: "w-2.5 h-2.5", color: "bg-[#f783ac]/85" },
-  { position: "bottom-10 left-[44%]", size: "w-2 h-2", color: "bg-[#22b8cf]/90" },
-  { position: "bottom-20 right-[35%]", size: "w-3 h-3", color: "bg-[#e599f7]/85" },
-  { position: "bottom-8 right-[18%]", size: "w-2.5 h-2.5", color: "bg-[#ffa94d]/85" },
-];
-
-const waterBalloons = [
+const accentOrbs = [
   {
-    position: "top-4 right-4 md:top-8 md:right-10",
-    colors: "from-[#ff6b6b] to-[#ff8fab]",
-    knot: "bg-[#ff6b6b]",
-    delay: "0s",
+    position: "top-8 right-6 md:top-10 md:right-12",
+    colors: "from-primary/30 to-cyan-400/20",
+    delay: "0.1s",
   },
   {
-    position: "bottom-10 right-2 md:bottom-14 md:right-10",
-    colors: "from-[#4dabf7] to-[#74c0fc]",
-    knot: "bg-[#4dabf7]",
-    delay: "1.1s",
+    position: "bottom-10 right-4 md:bottom-12 md:right-10",
+    colors: "from-amber-300/25 to-primary/15",
+    delay: "0.8s",
   },
   {
-    position: "top-12 left-2 md:top-16 md:left-8",
-    colors: "from-[#ffd43b] to-[#fab005]",
-    knot: "bg-[#fab005]",
-    delay: "0.6s",
+    position: "top-14 left-4 md:top-16 md:left-10",
+    colors: "from-cyan-300/25 to-primary/10",
+    delay: "0.4s",
   },
   {
-    position: "bottom-2 left-8 md:bottom-10 md:left-14",
-    colors: "from-[#69db7c] to-[#40c057]",
-    knot: "bg-[#40c057]",
-    delay: "1.7s",
+    position: "bottom-4 left-8 md:bottom-10 md:left-14",
+    colors: "from-primary/25 to-emerald-300/20",
+    delay: "1.2s",
   },
 ];
 
@@ -68,40 +64,25 @@ export default function HoliOfferSection() {
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-12 left-6 md:left-20 w-40 h-40 rounded-full bg-[#ff4d6d]/30 blur-3xl" />
-        <div className="absolute top-8 right-6 md:right-20 w-48 h-48 rounded-full bg-[#ffd43b]/30 blur-3xl" />
-        <div className="absolute -bottom-16 left-1/3 w-52 h-52 rounded-full bg-[#4dabf7]/25 blur-3xl" />
-        <div className="absolute bottom-2 right-1/4 w-36 h-36 rounded-full bg-[#69db7c]/25 blur-3xl" />
-        {splashDots.map((dot, index) => (
-          <div
-            key={`outer-splash-${index}`}
-            className={`absolute rounded-full blur-[1px] ${dot.position} ${dot.size} ${dot.color}`}
-          />
-        ))}
+        <div className="absolute -top-12 left-6 md:left-20 h-40 w-40 rounded-full bg-primary/20 blur-3xl" />
+        <div className="absolute top-8 right-6 md:right-20 h-48 w-48 rounded-full bg-cyan-400/15 blur-3xl" />
+        <div className="absolute -bottom-16 left-1/3 h-52 w-52 rounded-full bg-amber-300/10 blur-3xl" />
+        <div className="absolute bottom-2 right-1/4 h-36 w-36 rounded-full bg-primary/15 blur-3xl" />
       </div>
 
       <div className="container-narrow relative z-10">
         <div className="system-card rounded-3xl p-6 md:p-10 lg:p-12 border-primary/25 overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_15%_20%,rgba(255,77,109,0.22),transparent_40%),radial-gradient(circle_at_85%_15%,rgba(255,212,59,0.2),transparent_40%),radial-gradient(circle_at_30%_85%,rgba(77,171,247,0.18),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(105,219,124,0.18),transparent_40%)]" />
+          <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_15%_20%,rgba(53,184,255,0.18),transparent_38%),radial-gradient(circle_at_85%_15%,rgba(255,204,84,0.12),transparent_40%),radial-gradient(circle_at_30%_85%,rgba(18,99,168,0.16),transparent_45%),radial-gradient(circle_at_80%_80%,rgba(56,189,248,0.12),transparent_40%)]" />
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-8 right-[28%] w-14 h-14 rounded-full border-2 border-[#ff6b6b]/40 animate-pulse hidden md:block" />
-            <div className="absolute bottom-12 left-[30%] w-16 h-16 rounded-full border-2 border-[#4dabf7]/40 animate-pulse hidden md:block" />
-            {splashDots.map((dot, index) => (
-              <div
-                key={`inner-splash-${index}`}
-                className={`absolute rounded-full ${dot.position} ${dot.size} ${dot.color}`}
-              />
-            ))}
-            {waterBalloons.map((balloon, index) => (
-              <div key={`balloon-${index}`} className={`absolute ${balloon.position}`}>
+            <div className="absolute top-8 right-[28%] h-14 w-14 rounded-full border border-primary/25 animate-pulse hidden md:block" />
+            <div className="absolute bottom-12 left-[30%] h-16 w-16 rounded-full border border-cyan-300/20 animate-pulse hidden md:block" />
+            {accentOrbs.map((orb, index) => (
+              <div key={`orb-${index}`} className={`absolute ${orb.position}`}>
                 <div
-                  className={`relative w-9 h-12 md:w-11 md:h-14 rounded-[55%_45%_60%_40%/65%_50%_50%_35%] bg-gradient-to-br ${balloon.colors} shadow-[0_10px_24px_rgba(0,0,0,0.28)] animate-float`}
-                  style={{ animationDelay: balloon.delay }}
+                  className={`h-16 w-16 md:h-20 md:w-20 rounded-full bg-gradient-to-br ${orb.colors} blur-xl animate-float`}
+                  style={{ animationDelay: orb.delay }}
                 >
-                  <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-white/55" />
-                  <span
-                    className={`absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rotate-45 rounded-[2px] ${balloon.knot}`}
-                  />
+                  <span className="absolute inset-0 rounded-full border border-white/10" />
                 </div>
               </div>
             ))}
@@ -110,33 +91,53 @@ export default function HoliOfferSection() {
           <div className="relative grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-center">
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/35 bg-background/55 px-4 py-1.5 text-xs md:text-sm font-semibold tracking-[0.18em] uppercase text-primary/90">
-                <Sparkles size={14} /> Holi Special Offer <Droplets size={14} />
+                <Sparkles size={14} /> Limited-Time Discount Offer
               </span>
 
               <h2 className="mt-5 text-3xl md:text-5xl font-heading font-bold leading-tight text-balance">
-                Launch Our <span className="gradient-text">Automation Product</span> and Get a
-                <span className="text-[#ffd43b]"> 14-Day Free Trial</span>
+                Start With an <span className="gradient-text">Introductory Discount</span> on Your
+                <span className="text-[#ffd43b]"> Automation Setup</span>
               </h2>
 
               <p className="mt-4 text-base md:text-lg text-accent-secondary max-w-2xl">
-                Celebrate Holi with brighter lead conversion. We set up the AlgoAura automation
-                stack for WhatsApp, CRM, and follow-up workflows so your team can focus on sales.
+                We set up your WhatsApp, Facebook, and Instagram automation plus CRM syncing, Meta
+                ad lead routing, and follow-up workflows with reduced onboarding pricing for new
+                projects so you can launch faster without compromising the system.
               </p>
+
+              <div className="mt-6 grid gap-3 sm:grid-cols-2 max-w-2xl">
+                <div className="rounded-2xl border border-white/10 bg-background/55 px-4 py-4 backdrop-blur-sm">
+                  <p className="terminal-text text-[10px] uppercase tracking-[0.2em] text-primary/75">
+                    Applies To
+                  </p>
+                  <p className="mt-2 font-heading text-lg font-semibold text-foreground">
+                    New automation, Meta ads, and website + growth-system builds
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/10 bg-background/55 px-4 py-4 backdrop-blur-sm">
+                  <p className="terminal-text text-[10px] uppercase tracking-[0.2em] text-primary/75">
+                    Best Fit
+                  </p>
+                  <p className="mt-2 font-heading text-lg font-semibold text-foreground">
+                    Teams that want faster lead handling from day one
+                  </p>
+                </div>
+              </div>
 
               <div className="mt-7 flex flex-wrap gap-3">
                 <a
                   href="/contact"
                   className="gradient-btn inline-flex items-center gap-2 rounded-xl px-6 py-3"
                 >
-                  Claim Holi Trial <ArrowRight size={18} />
+                  Get Offer Details <ArrowRight size={18} />
                 </a>
                 <a
-                  href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20want%20the%20Holi%20offer%20for%20your%2014-day%20automation%20free%20trial."
+                  href="https://wa.me/918708767499?text=Hi%20AlgoAura,%20I%20want%20details%20about%20your%20discount%20offer%20for%20Meta%20ads%20and%20automation%20setup."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card inline-flex items-center gap-2 rounded-xl px-6 py-3 border-primary/25 hover:border-primary/50"
                 >
-                  <Bot size={18} className="text-primary" /> See Live Flow
+                  <Bot size={18} className="text-primary" /> Talk on WhatsApp
                 </a>
               </div>
             </div>
@@ -162,7 +163,7 @@ export default function HoliOfferSection() {
                 </div>
               ))}
               <p className="terminal-text text-xs uppercase tracking-[0.18em] text-primary/80 px-1">
-                Holi Offer: 14 days free trial from onboarding date.
+                Discount applies to new projects across CRM, social automation, Meta ads, and integrations.
               </p>
             </div>
           </div>

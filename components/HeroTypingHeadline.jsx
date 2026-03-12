@@ -5,6 +5,7 @@ import { memo, useEffect, useState } from "react";
 const heroTypedLines = [
   "For Growing Businesses",
   "With CRM + WhatsApp Automation",
+  "With Meta Ads + Social Automation",
   "With Booking and Lead Tracking",
   "That Convert Visitors into Leads",
 ];
